@@ -1,0 +1,64 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block content %}
+    <div id="raboti">
+        <div class="title">
+            <h2>
+                Виды выполняемых работ
+            </h2>
+        </div>
+        <div class="w-box">
+            <div class="w-item">
+                <h3>Замена столешницы </h3>
+                <img src="{{ asset('bundles/app/img/stoleshnica.jpg') }}">
+                <br/>
+                <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Бесплатная консультация</a>
+            </div>
+            <div class="w-item">
+                <h3>Замена фассадов </h3>
+                <img src="{{ asset('bundles/app/img/fassadi.jpg') }}">
+                <br/>
+                <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Бесплатная консультация</a>
+            </div>
+            <div class="w-item">
+                <h3>Замена фурнитуры </h3>
+                <img src="{{ asset('bundles/app/img/furnitura.jpg') }}">
+                <br/>
+                <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Бесплатная консультация</a>
+            </div>
+            <div class="w-item">
+                <h3>Навеска шкафов </h3>
+                <img src="{{ asset('bundles/app/img/naveska.png') }}">
+                <br/>
+                <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Бесплатная консультация</a>
+
+            </div>
+            <div class="w-item">
+                <h3>Врезка моек </h3>
+                <img src="{{ asset('bundles/app/img/vrezka.jpg') }}">
+                <br/>
+                <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Бесплатная консультация</a>
+            </div>
+            <div class="w-item">
+                <h3>Врезка варочных поверхностей </h3>
+                <img src="{{ asset('bundles/app/img/vrezka-varki.jpg') }}">
+                <br/>
+                <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Бесплатная консультация</a>
+            </div>
+
+            <div class="w-item">
+                <h3>Установка встраиваемой техники </h3>
+                <img src="{{ asset('bundles/app/img/montaj.jpg') }}">
+                <br/>
+                <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Бесплатная консультация</a>
+            </div>
+            <div class="w-item">
+                <h3>Ремонт мебельных гарнитур </h3>
+                <img src="{{ asset('bundles/app/img/remont.jpg') }}">
+                <br/>
+                <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Бесплатная консультация</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

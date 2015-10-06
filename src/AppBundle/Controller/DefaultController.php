@@ -21,6 +21,42 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/services", name="services")
+     * @Template()
+     */
+    public function servicesAction()
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/gallery", name="gallery")
+     * @Template()
+     */
+    public function galleryAction()
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/page/{url}", name="page")
+     * @Template()
+     */
+    public function pageAction($url)
+    {
+        return array();
+    }
+
+    /**
+     * @Route("/info", name="info")
+     * @Template()
+     */
+    public function infoAction()
+    {
+        return array();
+    }
+
+    /**
      * @Template("@App/header.html.twig")
      */
     public function headerAction()
