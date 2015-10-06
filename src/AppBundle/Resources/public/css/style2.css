@@ -977,7 +977,7 @@ h4 {
 }
 .respond-item {
     box-shadow: 3px 3px 10px #222;
-    height: 150px;
+    /*height: 150px;*/
     padding: 5px 15px;
     ;
 }
