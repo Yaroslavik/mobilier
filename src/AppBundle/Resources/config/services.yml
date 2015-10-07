@@ -1,0 +1,61 @@
+services:
+    sonata.admin.application:
+        class: AppBundle\Admin\ApplicationAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Application" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Application
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    sonata.admin.application_status:
+        class: AppBundle\Admin\ApplicationStatusAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Application Status" }
+        arguments:
+            - ~
+            - AppBundle\Entity\ApplicationStatus
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    sonata.admin.comment:
+        class: AppBundle\Admin\CommentAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Comment" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Comment
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    sonata.admin.config:
+        class: AppBundle\Admin\ConfigAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Config" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Config
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    sonata.admin.page:
+        class: AppBundle\Admin\PageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Page" }
+        arguments:
+            - ~
+            - AppBundle\Entity\Page
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+    sonata.admin.portfolio_item:
+        class: AppBundle\Admin\PortfolioItemAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Portfolio Item" }
+        arguments:
+            - ~
+            - AppBundle\Entity\PortfolioItem
+            - ~
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
