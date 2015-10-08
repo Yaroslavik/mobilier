@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: ru
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -86,7 +86,30 @@ sonata_block:
         # Enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts:   [admin]
+        sonata.block.service.text:
+        sonata.admin.block.search_result:
 
 sonata_admin:
     title:      Мобильер
     #title_logo: bundles/acmedemo/img/fancy_acme_logo.png
+    dashboard:
+        blocks:
+            - { class: "col-xs-12", position: top, type: sonata.block.service.text, settings: { content: "<div class='panel panel-default'><div class='panel-heading'><h3 class='panel-title'>Welcome!</h3></div><div class='panel-body'>You can customize this dashboard by editing the <code>sonata_admin.yml</code> file. The current dashboard presents the recent items from the NewsBundle and a non-statistical e-commerce information.</div></div>"} }
+            - { position: left, type: sonata.admin.block.admin_list }
+
+        groups:
+            sonata.admin.group.content:
+                label:           sonata_content
+                label_catalogue: SonataDemoBundle
+                icon:            '<i class="fa fa-th"></i>'
+                items:
+                    - sonata.admin.page
+                    - sonata.admin.portfolio_item
+
+    templates:
+        layout:     'AppBundle:Admin:standard_layout.html.twig'
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
