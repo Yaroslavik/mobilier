@@ -65,11 +65,17 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #     path:     "%database_path%"
+        types:
+            json: Sonata\Doctrine\Types\JsonType
 
     orm:
+        default_entity_manager: default
         auto_generate_proxy_classes: "%kernel.debug%"
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
+        entity_managers:
+            default:
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                auto_mapping: true
+
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -88,6 +94,8 @@ sonata_block:
             contexts:   [admin]
         sonata.block.service.text:
         sonata.admin.block.search_result:
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
 
 sonata_admin:
     title:      Мобильер
@@ -97,19 +105,32 @@ sonata_admin:
             - { class: "col-xs-12", position: top, type: sonata.block.service.text, settings: { content: "<div class='panel panel-default'><div class='panel-heading'><h3 class='panel-title'>Welcome!</h3></div><div class='panel-body'>You can customize this dashboard by editing the <code>sonata_admin.yml</code> file. The current dashboard presents the recent items from the NewsBundle and a non-statistical e-commerce information.</div></div>"} }
             - { position: left, type: sonata.admin.block.admin_list }
 
-        groups:
-            sonata.admin.group.content:
-                label:           sonata_content
-                label_catalogue: SonataDemoBundle
-                icon:            '<i class="fa fa-th"></i>'
-                items:
-                    - sonata.admin.page
-                    - sonata.admin.portfolio_item
+#        groups:
+#            sonata.admin.group.content:
+#                label:           sonata_content
+#                label_catalogue: SonataDemoBundle
+#                icon:            '<i class="fa fa-th"></i>'
+#                items:
+#                    - sonata.admin.page
+#                    - sonata.admin.portfolio_item
+#                    - sonata.admin.user
 
     templates:
         layout:     'AppBundle:Admin:standard_layout.html.twig'
 
+
+sonata_user:
+    #security_acl: true # Uncomment for ACL support
+    manager_type: orm # can be orm or mongodb
+
 fos_user:
-    db_driver: orm
-    firewall_name: main
-    user_class: AppBundle\Entity\User
+    db_driver:  orm # can be orm or odm
+    firewall_name:  main
+    user_class:  Application\Sonata\UserBundle\Entity\User
+
+    group:
+        group_class:  Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+
+    service:
+        user_manager: sonata.user.orm.user_manager
