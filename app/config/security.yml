@@ -33,9 +33,9 @@ security:
                 login_path:     /admin/login
                 use_forward:    false
                 check_path:     /admin/login_check
-                failure_path:  null
+                failure_path:   null
             logout:
-                path:  /admin/logout
+                path:   /admin/logout
             anonymous:  true
 
         main:
