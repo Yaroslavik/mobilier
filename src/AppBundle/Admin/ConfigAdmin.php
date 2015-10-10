@@ -25,7 +25,9 @@ class ConfigAdmin extends Admin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('title');
+        $datagridMapper
+            ->add('title')
+            ->add('mask');
     }
 
     protected function configureListFields(ListMapper $listMapper)

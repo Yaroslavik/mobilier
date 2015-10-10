@@ -6,9 +6,9 @@ body {
     margin-bottom: 0;
     min-width: 480px;
     position: relative;
-    height:auto !important;
-    height:100%;
-    min-height:100%;
+    height: auto !important;
+    height: 100%;
+    min-height: 100% !important;
 }
 
 textarea {
@@ -19,15 +19,21 @@ input[type=checkbox] {
     cursor: pointer;
 }
 
+.wrapper {
+    min-height: 100% !important;
+}
+
 /* Alerts */
 .alert-error {
     color: #a94442;
     background-color: #f2dede;
     border-color: #ebccd1;
 }
+
 .alert-error hr {
     border-top-color: #e4b9c0;
 }
+
 .alert-error .alert-link {
     color: #843534;
 }

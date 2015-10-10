@@ -38,6 +38,11 @@ class Config
      */
     protected $content;
 
+    public function __toString()
+    {
+        return $this->title ? $this->title : 'Параметр';
+    }
+
     /**
      * Get id
      *

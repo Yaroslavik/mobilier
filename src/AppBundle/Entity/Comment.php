@@ -53,6 +53,11 @@ class Comment
     /** @mytodo Add createdAt behavior */
     protected $createdAt;
 
+    public function __toString()
+    {
+        return $this->name ? 'Отзыв от ' . $this->name : 'Отзыв';
+    }
+
     /**
      * Get id
      *

@@ -27,6 +27,6 @@ class ApplicationStatusAdmin extends Admin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('title');
+        $listMapper->addIdentifier('title');
     }
 }

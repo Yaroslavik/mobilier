@@ -48,6 +48,11 @@ class PortfolioItem
      */
     protected $onHomepage = true;
 
+    public function __toString()
+    {
+        return $this->title ? $this->title : 'Фотография';
+    }
+
     /**
      * Get id
      *

@@ -1,0 +1,15 @@
+Comment: Отзыв
+breadcrumb.link_comment_list: Список отзывов
+list.label_name: Имя
+list.label_info: Краткая информация
+list.label_order: Порядок
+list.label_visible: Видимый
+filter.label_name: Имя
+filter.label_info: Краткая информация
+filter.label_content: Отзыв
+filter.label_visible: Видимый
+form.label_name: Имя
+form.label_info: Краткая информация
+form.label_content: Отзыв
+form.label_order: Порядок
+form.label_visible: Видимый

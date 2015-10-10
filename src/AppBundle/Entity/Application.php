@@ -49,6 +49,11 @@ class Application
      **/
     protected $status;
 
+    public function __toString()
+    {
+        return $this->name ? 'Заявка от ' . $this->name : 'Заявка';
+    }
+
     /**
      * Get id
      *

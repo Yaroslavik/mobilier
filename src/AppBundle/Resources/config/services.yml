@@ -8,7 +8,9 @@ services:
             - AppBundle\Entity\Application
             - ~
         calls:
-            - [ setTranslationDomain, [AppBundle]]
+            - [setTranslationDomain, [application]]
+            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+
     sonata.admin.application_status:
         class: AppBundle\Admin\ApplicationStatusAdmin
         tags:
@@ -18,17 +20,21 @@ services:
             - AppBundle\Entity\ApplicationStatus
             - ~
         calls:
-            - [ setTranslationDomain, [AppBundle]]
+            - [setTranslationDomain, [application_status]]
+            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+
     sonata.admin.comment:
         class: AppBundle\Admin\CommentAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Comment" }
+            - { name: sonata.admin, manager_type: orm, group: "Applications", label: "Comment" }
         arguments:
             - ~
             - AppBundle\Entity\Comment
             - ~
         calls:
-            - [ setTranslationDomain, [AppBundle]]
+            - [setTranslationDomain, [comment]]
+            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+
     sonata.admin.config:
         class: AppBundle\Admin\ConfigAdmin
         tags:
@@ -38,7 +44,9 @@ services:
             - AppBundle\Entity\Config
             - ~
         calls:
-            - [ setTranslationDomain, [AppBundle]]
+            - [setTranslationDomain, [config]]
+            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+
     sonata.admin.page:
         class: AppBundle\Admin\PageAdmin
         tags:
@@ -48,7 +56,9 @@ services:
             - AppBundle\Entity\Page
             - ~
         calls:
-            - [ setTranslationDomain, [AppBundle]]
+            - [setTranslationDomain, [page]]
+            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+
     sonata.admin.portfolio_item:
         class: AppBundle\Admin\PortfolioItemAdmin
         tags:
@@ -58,4 +68,5 @@ services:
             - AppBundle\Entity\PortfolioItem
             - ~
         calls:
-            - [ setTranslationDomain, [AppBundle]]
+            - [setTranslationDomain, [portfolio_item]]
+            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]

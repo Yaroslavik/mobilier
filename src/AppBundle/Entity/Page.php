@@ -53,6 +53,11 @@ class Page
      */
     protected $metaKeywords;
 
+    public function __toString()
+    {
+        return $this->title ? $this->title : 'Страница';
+    }
+
     /**
      * Get id
      *
