@@ -3,17 +3,19 @@
 {% block title %}Мобильер - корпусная мебель{% endblock %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('bundles/app/css/nivo-lightbox.css') }}">
     <link rel="stylesheet" href="{{ asset('bundles/app/css/nivo-lightbox-default.css') }}">
-    <link rel="stylesheet" href="{{ asset('bundles/app/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('bundles/app/css/style2.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="{{ asset('bundles/app/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/app/css/appendix.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/wow.min.js') }}"></script>
 {% endblock %}
 
@@ -23,7 +25,6 @@
     {% block content %}{% endblock %}
     {% render(controller('AppBundle:Default:footer')) %}
 
-    <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/dm-modal.js') }}"></script>
     <script>
         new WOW().init();
@@ -35,7 +36,6 @@
         });
     </script>
     <script src="{{ asset('bundles/app/js/twitterFetcher_min.js') }}"></script>
-    <script src="{{ asset('bundles/app/js/wow.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/appear.js') }}"></script>
@@ -48,7 +48,7 @@
     <script src="{{ asset('bundles/app/js/min/main.min.js') }}"></script>
 
     <div id="popup_contact" class="popup_block">
-        <form id="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <form id="form" action="" method="post">
             <fieldset>
                 <p class="first">
                     <label for="name">Имя *</label>

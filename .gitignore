@@ -12,5 +12,5 @@
 
 /.idea/
 *.php~
-/web/html/
+#/web/html/
 /.project
