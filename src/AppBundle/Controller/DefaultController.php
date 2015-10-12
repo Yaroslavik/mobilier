@@ -5,18 +5,36 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use AppBundle\Entity\CommentRepository;
 
 class DefaultController extends Controller
 {
+    protected $firstCommentsCount = 3;
+
     /**
      * @Route("/", name="homepage")
      * @Template()
      */
     public function indexAction()
     {
+        $comments = $this->getDoctrine()->getRepository('AppBundle:Comment')->getActualComments();
+        $firstComments = [];
+        $lastComments = [];
+
+        $count = count($comments);
+        for ($i = 0; $i < $count; $i++) {
+            if ($i < $this->firstCommentsCount) {
+                $firstComments[] = $comments[$i];
+            } else {
+                $lastComments[] = $comments[$i];
+            }
+        }
+
         return array(
             'metaDescription' => 'Описание',    /** @mytodo Заменить на реальные значения */
             'metaKeywords' => 'Ключевые слова',
+            'firstComments' => $firstComments,
+            'lastComments' => $lastComments,
         );
     }
 

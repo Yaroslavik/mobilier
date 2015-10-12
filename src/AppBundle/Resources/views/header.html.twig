@@ -5,15 +5,15 @@
         </div>
         <div class="contacts right">
             <ul>
-                <li><span>+375 29</span> 555 55 55</li>
-                <li><span>+375 29</span> 555 55 55</li>
+                <li>{{ configuration.get('PHONE_1')|raw }}</li>
+                <li>{{ configuration.get('PHONE_2')|raw }}</li>
                 <li><a class="poplight" rel="popup_contact" href="#?w=600">Заказать звонок</a></li>
             </ul>
         </div>
         <div class="worktime right">
             <ul>
-                <li><b>8:00 - 20:00</b></li>
-                <li>Без выходных</li>
+                <li><b>{{ configuration.get('WORK_TIME') }}</b></li>
+                <li>{{ configuration.get('WORK_DAYS') }}</li>
             </ul>
         </div>
     </div>

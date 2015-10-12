@@ -12,7 +12,7 @@ use Doctrine\Common\Annotations\Annotation\IgnoreAnnotation;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="CommentRepository")
  * @ORM\Table(name="comment")
  * @IgnoreAnnotation("mytodo")
  */
@@ -29,11 +29,6 @@ class Comment
      * @ORM\Column(type="string", length=50)
      */
     protected $name;
-
-    /**
-     * @ORM\Column(type="string", length=80, nullable=true)
-     */
-    protected $info;
 
     /**
      * @ORM\Column(type="text")
@@ -90,30 +85,6 @@ class Comment
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set info
-     *
-     * @param string $info
-     *
-     * @return Comment
-     */
-    public function setInfo($info)
-    {
-        $this->info = $info;
-
-        return $this;
-    }
-
-    /**
-     * Get info
-     *
-     * @return string
-     */
-    public function getInfo()
-    {
-        return $this->info;
     }
 
     /**

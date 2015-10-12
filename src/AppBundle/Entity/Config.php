@@ -11,7 +11,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="ConfigRepository")
  * @ORM\Table(name="config")
  */
 class Config
@@ -24,7 +24,7 @@ class Config
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, unique = true)
      */
     protected $mask;
 

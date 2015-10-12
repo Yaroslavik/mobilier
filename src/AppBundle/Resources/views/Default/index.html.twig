@@ -129,55 +129,33 @@
         </div>
         <div class="container">
             <div class="r-box">
-                <blockquote class="text-left">
-                    <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                    <p>Владимир Антонов</p>
-                </blockquote>
-                <blockquote class="text-left">
-                    <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                    <p>Владимир Антонов</p>
-                </blockquote>
-                <blockquote class="text-left">
-                    <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                    <p>Владимир Антонов</p>
-                </blockquote>
+                {% for comment in firstComments %}
+                    <blockquote class="text-left">
+                        <p><em>{{ comment.getContent() }}</em></p>
+                        <p>{{ comment.getName() }}</p>
+                    </blockquote>
+                {% endfor %}
 
-                <!-- Large modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Посмотреть еще отзывы</button>
+                {% if lastComments is not empty %}
+                    <!-- Large modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Посмотреть еще отзывы</button>
 
-                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <blockquote class="text-left">
-                                <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                                <p>Владимир Антонов</p>
-                            </blockquote>
-                            <blockquote class="text-left">
-                                <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                                <p>Владимир Антонов</p>
-                            </blockquote>
-                            <blockquote class="text-left">
-                                <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                                <p>Владимир Антонов</p>
-                            </blockquote>
-                            <blockquote class="text-left">
-                                <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                                <p>Владимир Антонов</p>
-                            </blockquote>
-                            <blockquote class="text-left">
-                                <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                                <p>Владимир Антонов</p>
-                            </blockquote>
-                            <blockquote class="text-left">
-                                <p><em>Сделали кухню за 2 недели. Я доволен. Все соседи приходят на чайт только ко мне. Я уже второй год не покупаю чай. ЭКОНОМИЯ НА ЛИЦО!</em></p>
-                                <p>Владимир Антонов</p>
-                            </blockquote>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                {% for comment in lastComments %}
+                                    <blockquote class="text-left">
+                                        <p><em>{{ comment.getContent() }}</em></p>
+                                        <p>{{ comment.getName() }}</p>
+                                    </blockquote>
+                                {% endfor %}
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                {% endif %}
             </div>
         </div>
     </div>

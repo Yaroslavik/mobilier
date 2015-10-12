@@ -19,7 +19,6 @@ class CommentAdmin extends Admin
     {
         $formMapper
             ->add('name')
-            ->add('info')
             ->add('content')
             ->add('order')
             ->add('visible');
@@ -29,7 +28,6 @@ class CommentAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
-            ->add('info')
             ->add('content')
             ->add('visible');
     }
@@ -38,7 +36,6 @@ class CommentAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
-            ->add('info')
             ->add('order')
             ->add('visible');
     }
