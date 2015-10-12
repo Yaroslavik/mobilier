@@ -31,8 +31,6 @@ class DefaultController extends Controller
         }
 
         return array(
-            'metaDescription' => 'Описание',    /** @mytodo Заменить на реальные значения */
-            'metaKeywords' => 'Ключевые слова',
             'firstComments' => $firstComments,
             'lastComments' => $lastComments,
         );

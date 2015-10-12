@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block meta %}{% endblock %}
+<html {{ sonata_seo_html_attributes() }}>
+    <head {{ sonata_seo_head_attributes() }}>
+        {{ sonata_seo_title() }}
+        {{ sonata_seo_metadatas() }}
+        {{ sonata_seo_link_canonical() }}
         {% block stylesheets %}{% endblock %}
         {% block javascripts %}{% endblock %}
         {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}

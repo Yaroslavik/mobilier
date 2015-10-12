@@ -45,9 +45,6 @@ class Comment
      */
     protected $visible = true;
 
-    /** @mytodo Add createdAt behavior */
-    protected $createdAt;
-
     public function __toString()
     {
         return $this->name ? 'Отзыв от ' . $this->name : 'Отзыв';
