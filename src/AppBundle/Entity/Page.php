@@ -10,6 +10,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Annotations\Annotation\IgnoreAnnotation;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity()
@@ -30,7 +31,10 @@ class Page
      */
     protected $title;
 
-    /** @mytodo Add sluggable */
+    /**
+     * @ORM\Column(type="string", length=50)
+     * @Gedmo\Slug(fields={"title"}, updatable=false, separator="-")
+     */
     protected $slug;
 
     /**
@@ -186,5 +190,29 @@ class Page
     public function getMetaKeywords()
     {
         return $this->metaKeywords;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Page
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

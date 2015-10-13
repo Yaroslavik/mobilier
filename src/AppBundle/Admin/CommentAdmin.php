@@ -21,7 +21,7 @@ class CommentAdmin extends Admin
             ->add('name')
             ->add('content')
             ->add('order')
-            ->add('visible');
+            ->add('visible', null, ['required' => false]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

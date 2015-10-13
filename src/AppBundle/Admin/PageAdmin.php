@@ -19,10 +19,11 @@ class PageAdmin extends Admin
     {
         $formMapper
             ->add('title')
+            ->add('slug', null, ['required' => false])
             ->add('content', null, ['attr' => ['class' => 'wysiwyg']])
-            ->add('visible')
-            ->add('metaDescription')
-            ->add('metaKeywords');
+            ->add('visible', null, ['required' => false])
+            ->add('metaDescription', null, ['required' => false])
+            ->add('metaKeywords', null, ['required' => false]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -36,6 +37,7 @@ class PageAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('title')
+            ->add('slug')
             ->add('visible');
     }
 }
