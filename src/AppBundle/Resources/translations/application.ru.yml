@@ -1,11 +1,14 @@
 Application: Заявка
 breadcrumb.link_application_list: Список заявок
+list.label_created_at: Дата создания
 list.label_name: Имя
 list.label_phone: Телефон
 list.label_status: Статус
 filter.label_name: Имя
 filter.label_phone: Телефон
 filter.label_status: Статус
+form.label_created_at: Дата создания
+form.label_updated_at: Дата обновления
 form.label_name: Имя
 form.label_phone: Телефон
 form.label_comment: Комментарий
