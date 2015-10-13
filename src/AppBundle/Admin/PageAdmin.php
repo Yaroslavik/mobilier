@@ -19,7 +19,7 @@ class PageAdmin extends Admin
     {
         $formMapper
             ->add('title')
-            ->add('slug', null, ['required' => false])
+            ->add('slug', null, ['required' => false, 'attr' => ['readonly' => true]])
             ->add('content', null, ['attr' => ['class' => 'wysiwyg']])
             ->add('visible', null, ['required' => false])
             ->add('metaDescription', null, ['required' => false])

@@ -14,5 +14,9 @@
 *.php~
 #/web/html/
 /.project
+
 /web/uploads/*
 !/web/uploads/.gitkeep
+!/web/uploads/gallery
+/web/uploads/gallery/*
+!/web/uploads/gallery/.gitkeep

@@ -3,6 +3,7 @@ breadcrumb.link_portfolio_item_list: Портфолио
 list.label_title: Заголовок
 list.label_visible: Видимый
 list.label_on_homepage: На главной
+list.label_file: Изображение
 filter.label_title: Заголовок
 filter.label_visible: Видимый
 filter.label_on_homepage: На главной
@@ -11,3 +12,4 @@ form.label_description: Описание
 form.label_order: Порядок
 form.label_visible: Видимый
 form.label_on_homepage: На главной
+form.label_file: Изображение
