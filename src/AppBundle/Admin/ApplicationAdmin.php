@@ -18,6 +18,14 @@ class ApplicationAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->add('createdAt', null, [
+                'required' => false,
+                'widget' => 'single_text',
+                'attr' => ['readonly' => true]])
+            ->add('updatedAt', null, [
+                'required' => false,
+                'widget' => 'single_text',
+                'attr' => ['readonly' => true]])
             ->add('name')
             ->add('phone')
             ->add('comment')
@@ -35,7 +43,8 @@ class ApplicationAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('name')
+            ->addIdentifier('createdAt')
+            ->add('name')
             ->add('phone')
             ->add('status');
     }
