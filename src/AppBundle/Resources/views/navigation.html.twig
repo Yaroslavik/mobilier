@@ -3,11 +3,11 @@
         <div class="navik">
             <div class="container">
                 <ul class="navg">
-                    <li><a href="index.html">Кухни</a></li>
-                    <li><a href="mebel.html">Мебель</a></li>
-                    <li><a href="service.html">Обслуживание</a></li>
-                    <li><a href="poleznoe.html">Материалы</a></li>
-                    <li><a href="vopros-otvet.html">Вопрос-ответ</a></li>
+                    <li><a href="{{ path('homepage') }}">Кухни</a></li>
+                    <li><a href="{{ path('gallery') }}">Мебель</a></li>
+                    <li><a href="{{ path('services') }}">Обслуживание</a></li>
+                    <li><a href="{{ path('info') }}">Материалы</a></li>
+                    <li><a href="{{ path('page', {'url': 'faq'}) }}">Вопрос-ответ</a></li>
                     <div class="phone-icon right">
                         <a class="phone-icon poplight" rel="popup_contact" href="#?w=600">
                             <i class="fa fa-phone-square fa-3x"></i></a>

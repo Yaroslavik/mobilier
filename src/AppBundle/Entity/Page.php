@@ -48,14 +48,14 @@ class Page
     protected $visible = true;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    protected $metaDescription;
+    protected $metaDescription = '';
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
-    protected $metaKeywords;
+    protected $metaKeywords = '';
 
     public function __toString()
     {

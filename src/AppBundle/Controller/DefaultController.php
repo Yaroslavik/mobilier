@@ -46,6 +46,15 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/info", name="info")
+     * @Template()
+     */
+    public function informationAction()
+    {
+        return array();
+    }
+
+    /**
      * @Route("/gallery", name="gallery")
      * @Template()
      */
@@ -60,16 +69,11 @@ class DefaultController extends Controller
      */
     public function pageAction($url)
     {
-        return array();
-    }
-
-    /**
-     * @Route("/info", name="info")
-     * @Template()
-     */
-    public function infoAction()
-    {
-        return array();
+        $repository = $this->getDoctrine()->getRepository('AppBundle:Page');
+        $page = $repository->findOneBy(['slug' => $url]);
+        return array(
+            'page' => $page,
+        );
     }
 
     /**
