@@ -25,3 +25,8 @@ $(function () {
         });
     });
 });
+
+$(window).on('load', function () {
+    // Fix gallery
+    $(this).trigger('resize');
+});
