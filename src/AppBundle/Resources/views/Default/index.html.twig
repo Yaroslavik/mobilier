@@ -20,11 +20,11 @@
             <h2> Посмотрите наши работы</h2>
         </div>
         <div class="portfolio-wrapper margin-bottom-medium">
-            {% for i in 1..12 %}
+            {% for item in portfolioItems %}
                 <div class="portfolio-item print">
                     <div class="portfolio">
-                        <a href="{{ asset('bundles/app/img/portfolio/item.jpg') }}" data-lightbox-gallery="portfolio">
-                            <img src="{{ asset('bundles/app/img/portfolio/sm.jpg') }}" alt="Portfolio 1"/>
+                        <a href="/{{ item.getWebPath() }}" data-lightbox-gallery="portfolio">
+                            <img src="/{{ item.getWebPath() }}" alt="{{ item.getTitle() }}"/>
                             <!-- END PORTFOLIO IMAGE -->
                             <div class="portfolio-overlay">
 

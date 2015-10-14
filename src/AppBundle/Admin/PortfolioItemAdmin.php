@@ -39,7 +39,7 @@ class PortfolioItemAdmin extends Admin
         $formMapper
             ->add('title')
             ->add('file', 'file', $fileFieldOptions)
-            ->add('description')
+            ->add('description', null, ['required' => false])
             ->add('order')
             ->add('visible', null, ['required' => false])
             ->add('onHomepage', null, ['required' => false]);

@@ -5,7 +5,6 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use AppBundle\Entity\CommentRepository;
 
 class DefaultController extends Controller
 {
@@ -17,6 +16,10 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
+        // Images
+        $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getHomepageItems();
+
+        // Comments
         $comments = $this->getDoctrine()->getRepository('AppBundle:Comment')->getActualComments();
         $firstComments = [];
         $lastComments = [];
@@ -31,6 +34,7 @@ class DefaultController extends Controller
         }
 
         return array(
+            'portfolioItems' => $portfolioItems,
             'firstComments' => $firstComments,
             'lastComments' => $lastComments,
         );
@@ -60,7 +64,11 @@ class DefaultController extends Controller
      */
     public function galleryAction()
     {
-        return array();
+        // Images
+        $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getVisibleItems();
+        return array(
+            'portfolioItems' => $portfolioItems,
+        );
     }
 
     /**
