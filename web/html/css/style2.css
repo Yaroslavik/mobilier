@@ -100,6 +100,9 @@ ul.navg li a {
     margin-top: 9px;
 }
 
+color: coral;
+
+}
 ul.navg li a:hover {
     text-decoration: none;
 }
@@ -296,6 +299,7 @@ ul.navg li {
     margin-top: 50px;
 }
 .bonus-pic {
+    background: ;
     background-size: cover;
 }
 .s-list ul li {
