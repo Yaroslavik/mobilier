@@ -2,9 +2,13 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Application;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Acl\Exception\Exception;
 
 class DefaultController extends Controller
 {
@@ -106,5 +110,49 @@ class DefaultController extends Controller
     public function footerAction()
     {
         return array();
+    }
+
+    /**
+     * @Route("/callback", name="callback", methods={"POST"})
+     */
+    public function callbackAction(Request $request)
+    {
+        try {
+            $configuration = $this->get('app.configuration');
+
+            $name = $request->get('name');
+            $phone = $request->get('phone');
+            if (!$name || !$phone) throw new Exception('Не указано имя и/или номер телефона.');
+
+            // Сохранение заявки
+            $application = new Application();
+            $application->setName($name);
+            $application->setPhone($phone);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($application);
+            $em->flush();
+
+            // Рендер письма
+            $messageBody = $this->get('templating')->render('AppBundle::message_callback.html.twig', [
+                'name' => $name,
+                'phone' => $phone,
+                'created_at' => $application->getCreatedAt(),
+            ]);
+
+            // Отправка письма
+            /** @mytodo Протестировать отправку на продакшене */
+            //$mailer = $this->get('mailer');
+            /** @var \Swift_Message $message */
+            //$message = $mailer->createMessage();
+            //$message->setTo($configuration->get('EMAIL_MANAGER'));
+            //$message->setBody($messageBody);
+            //$mailer->send($message);
+
+            $data['message'] = $configuration->get('CALLBACK_SUCCESS');
+        } catch(\Exception $e) {
+            $data['message'] = $this->get('kernel')->isDebug() ? $e->getMessage() : $configuration->get('CALLBACK_FAIL');
+        }
+
+        return new JsonResponse($data);
     }
 }

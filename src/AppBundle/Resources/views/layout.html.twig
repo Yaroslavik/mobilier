@@ -44,19 +44,23 @@
     <script src="{{ asset('bundles/app/js/main.js') }}"></script>
     <script src="{{ asset('bundles/app/js/min/plugins.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/min/main.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/appendix.js') }}"></script>
 
     <div id="popup_contact" class="popup_block">
-        <form id="form" action="" method="post">
+        <form id="form" action="{{ path('callback') }}" method="post">
             <fieldset>
                 <p class="first">
                     <label for="name">Имя *</label>
                     <input type="text" name="name" id="name" size="30" class=”required”>
                 </p>
                 <p>
-                    <label for="email">Телефон *</label>
-                    <input type="text" name="email" id="email" size="30" class=”required”>
+                    <label for="phone">Телефон *</label>
+                    <input type="text" name="phone" id="phone" size="30" class=”required”>
                 </p>
-                <p>*Ваши данные надежно защищены <a href="#">политика конфиденциальности</a></p>
+                <p>
+                    *Ваши данные надежно защищены
+                    <a href="{{ path('page', {'url': 'privacy-policy'}) }}">политика конфиденциальности</a>
+                </p>
             </fieldset>
             <p class="submit">
                 <button type="submit" name="submit">Заказать звонок</button>

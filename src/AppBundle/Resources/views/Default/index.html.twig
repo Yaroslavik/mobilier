@@ -102,16 +102,18 @@
                 <h3>или</h3>
                 <a href="">Узнайте еще 2 способа как это сделать</a>
             </div>
-            <div class="form right">
-                <form>
+            <div id="form_callback" class="form right">
+                <form action="{{ path('callback') }}" method="post">
                     <h3>Оставьте заявку и наш дизайнер свяжется с Вами</h3>
                     <h4>для уточнения информации</h4>
-                    <input class="diz" type="text" name="name" placeholder="Как Вас зовут?">
-                    <br/>
-                    <input class="diz" type="tel" name="phone" placeholder="Ваш номер телефона">
-                    <br/>
-                    <a href="#" class="btn btn-danger">Отправить</a>
-                    <p>*Ваши данные надежно защищены</p>
+                    <div class="controls">
+                        <input class="diz" type="text" name="name" placeholder="Как Вас зовут?">
+                        <br/>
+                        <input class="diz" type="tel" name="phone" placeholder="Ваш номер телефона">
+                        <br/>
+                        <button type="submit" class="btn btn-danger">Отправить</button>
+                        <p>*Ваши данные надежно защищены</p>
+                    </div>
                 </form>
             </div>
         </div>
