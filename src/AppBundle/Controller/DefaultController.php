@@ -6,9 +6,11 @@ use AppBundle\Entity\Application;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Acl\Exception\Exception;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
 
 class DefaultController extends Controller
 {
@@ -83,6 +85,11 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Page');
         $page = $repository->findOneBy(['slug' => $url]);
+
+        if (!$page) {
+            throw new NotFoundHttpException("Страница не найдена.");
+        }
+
         return array(
             'page' => $page,
         );
@@ -122,7 +129,7 @@ class DefaultController extends Controller
 
             $name = $request->get('name');
             $phone = $request->get('phone');
-            if (!$name || !$phone) throw new Exception('Не указано имя и/или номер телефона.');
+            if (!$name || !$phone) throw new \Exception('Не указано имя и/или номер телефона.');
 
             // Сохранение заявки
             $application = new Application();
@@ -154,5 +161,10 @@ class DefaultController extends Controller
         }
 
         return new JsonResponse($data);
+    }
+
+    public function exceptionAction(FlattenException $exception, DebugLoggerInterface $logger)
+    {
+        return $this->redirect($this->generateUrl('page', ['url' => '404']));
     }
 }
