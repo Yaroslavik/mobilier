@@ -12,6 +12,12 @@ use Doctrine\ORM\EntityRepository;
 
 class CommentRepository extends EntityRepository
 {
+    /**
+     * Опубликованные комментарии
+     *
+     * @param int $count
+     * @return mixed
+     */
     public function getActualComments($count = 10)
     {
         return $this->createQueryBuilder('comment')

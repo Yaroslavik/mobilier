@@ -107,7 +107,6 @@ $(document).ready(function () {
   /* ========================================================================
     Grab Last Tweet
    ========================================================================== */
-  /*
   var config = {
     "id": '526796576736301056',
     "domId": 'tweets',
@@ -133,7 +132,7 @@ $(document).ready(function () {
       element.innerHTML = html;
   }
   twitterFetcher.fetch(config);
-  */
+
 
   /* ========================================================================
     Portfolio Filter
@@ -203,7 +202,7 @@ $(document).ready(function () {
   /* ========================================================================
      Component: Map
    ========================================================================== */
-  //google.maps.event.addDomListener(window, 'load', init);
+  google.maps.event.addDomListener(window, 'load', init);
 
   function init() {
     var myLatlng = new google.maps.LatLng(41.850033, -87.6500523);

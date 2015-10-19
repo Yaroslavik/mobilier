@@ -18,10 +18,10 @@
 {% endblock %}
 
 {% block body %}
-    {% render(controller('AppBundle:Default:header')) %}
-    {% render(controller('AppBundle:Default:navigation')) %}
+    {% include "@App/header.html.twig" %}
+    {% include "@App/navigation.html.twig" %}
     {% block content %}{% endblock %}
-    {% render(controller('AppBundle:Default:footer')) %}
+    {% include "@App/footer.html.twig" with {'mapWithTitle': (mapWithTitle is defined) ? mapWithTitle : false} %}
 
     <script src="{{ asset('bundles/app/js/dm-modal.js') }}"></script>
     <script>

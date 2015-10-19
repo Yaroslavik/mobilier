@@ -17,6 +17,8 @@ class DefaultController extends Controller
     protected $firstCommentsCount = 3;
 
     /**
+     * Главная страница
+     *
      * @Route("/", name="homepage")
      * @Template()
      */
@@ -39,32 +41,16 @@ class DefaultController extends Controller
             }
         }
 
-        return array(
+        return [
             'portfolioItems' => $portfolioItems,
             'firstComments' => $firstComments,
             'lastComments' => $lastComments,
-        );
+        ];
     }
 
     /**
-     * @Route("/services", name="services")
-     * @Template()
-     */
-    public function servicesAction()
-    {
-        return array();
-    }
-
-    /**
-     * @Route("/info", name="info")
-     * @Template()
-     */
-    public function informationAction()
-    {
-        return array();
-    }
-
-    /**
+     * Мебель|Галерея работ
+     *
      * @Route("/gallery", name="gallery")
      * @Template()
      */
@@ -72,12 +58,47 @@ class DefaultController extends Controller
     {
         // Images
         $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getVisibleItems();
-        return array(
+        return [
             'portfolioItems' => $portfolioItems,
-        );
+        ];
     }
 
     /**
+     * Обслуживание|Виды выполняемых работ
+     *
+     * @Route("/services", name="services")
+     * @Template()
+     */
+    public function servicesAction()
+    {
+        return [];
+    }
+
+    /**
+     * Материалы
+     *
+     * @Route("/info", name="info")
+     * @Template()
+     */
+    public function informationAction()
+    {
+        return [];
+    }
+
+    /**
+     * Калькулятор
+     *
+     * @Route("/calc", name="calc")
+     * @Template()
+     */
+    public function calcAction()
+    {
+        return [];
+    }
+
+    /**
+     * Тестовые страницы
+     *
      * @Route("/page/{url}", name="page")
      * @Template()
      */
@@ -90,36 +111,14 @@ class DefaultController extends Controller
             throw new NotFoundHttpException("Страница не найдена.");
         }
 
-        return array(
+        return [
             'page' => $page,
-        );
+        ];
     }
 
     /**
-     * @Template("@App/header.html.twig")
-     */
-    public function headerAction()
-    {
-        return array();
-    }
-
-    /**
-     * @Template("@App/navigation.html.twig")
-     */
-    public function navigationAction()
-    {
-        return array();
-    }
-
-    /**
-     * @Template("@App/footer.html.twig")
-     */
-    public function footerAction()
-    {
-        return array();
-    }
-
-    /**
+     * Заказ звонка
+     *
      * @Route("/callback", name="callback", methods={"POST"})
      */
     public function callbackAction(Request $request)
@@ -163,6 +162,13 @@ class DefaultController extends Controller
         return new JsonResponse($data);
     }
 
+    /**
+     * 404
+     *
+     * @param FlattenException $exception
+     * @param DebugLoggerInterface $logger
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
     public function exceptionAction(FlattenException $exception, DebugLoggerInterface $logger)
     {
         return $this->redirect($this->generateUrl('page', ['url' => '404']));

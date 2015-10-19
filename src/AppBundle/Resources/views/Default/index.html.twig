@@ -1,11 +1,12 @@
 {% extends '@App/layout.html.twig' %}
 
+{% set mapWithTitle = true %}
+
 {% block content %}
     <div id="banner">
         <div class="priziv">
             <h1>Кухни на заказ под ключ</h1>
-
-            <h2>от 1 000 000 бел.рублей <br/><span>с бесплатной доставкой</span><br/>и сборкой за один день</h2>
+            <h2>по адекватным ценам<br/><span>с бесплатной доставкой</span><br/>сборка за 1 день</h2>
         </div>
         <div class="zayavka">
             <ul>
@@ -18,6 +19,8 @@
     <section id="portfolio" class="portfolio padding-large text-center">
         <div class="title">
             <h2> Посмотрите наши работы</h2>
+            <div class="just"></div>
+            <p>Только настоящие фотографии выполненных работ</p>
         </div>
         <div class="portfolio-wrapper margin-bottom-medium">
             {% for item in portfolioItems %}
@@ -25,12 +28,9 @@
                     <div class="portfolio">
                         <a href="/{{ item.getWebPath() }}" data-lightbox-gallery="portfolio">
                             <img src="/{{ item.getWebPath() }}" alt="{{ item.getTitle() }}"/>
-                            <!-- END PORTFOLIO IMAGE -->
                             <div class="portfolio-overlay">
-
                                 <div class="button">Увеличить</div>
                             </div>
-                            <!-- END PORTFOLIO OVERLAY -->
                         </a>
                     </div>
                 </div>
@@ -40,6 +40,7 @@
     <div id="adv">
         <div class="title">
             <h2>Почему стоит заказать кухню у нас</h2>
+            <div class="just"></div>
             <p></p>
         </div>
         <div class="row">
@@ -47,14 +48,12 @@
                 <div class="adv-box">
                     <div class="adv-item">
                         <img align="left" src="{{ asset('bundles/app/img/salon.jpg') }}" alt="pic" class="m-r-yes">
-
-                        <h3>Cобственный салон </h3>
-
+                        <h3>Cобственный салон</h3>
                         <p>Вы можете приехать к нам и ознакомиться
                             <br/> с образцами на месте. В салоне представлена
                             <br/> экспозиция кухонной мебели, которую Вы можете
-                            <br/> посмотреть и потрогать.</p>
-
+                            <br/> посмотреть и потрогать.
+                        </p>
                     </div>
                     <div class="adv-item">
                         <img align="right" src="{{ asset('bundles/app/img/idesign.jpg') }}" alt="pic" class="m-r-none">
@@ -134,9 +133,7 @@
                 {% endfor %}
 
                 {% if lastComments is not empty %}
-                    <!-- Large modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Посмотреть еще отзывы</button>
-
                     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -153,22 +150,6 @@
                         </div>
                     </div>
                 {% endif %}
-            </div>
-        </div>
-    </div>
-
-    <div id="skinali">
-        <div class="container">
-            <div class="textepta">
-                <h4>Закажите кухню у нас и получите</h4>
-                <h2>
-                    Потрясающее скинали
-                </h2>
-                <h3>в подарок</h3>
-
-                <div class="skinali-btn">
-                    <a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">ЗАКАЗАТЬ</a>
-                </div>
             </div>
         </div>
     </div>

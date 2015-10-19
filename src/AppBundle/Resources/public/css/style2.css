@@ -1054,3 +1054,62 @@ h4 {
 .title p {
     font-size: 25px;
 }
+.ch-form .radio {
+    display: inline-block;
+    margin: 25px;
+}
+.ch-form .alert {
+    margin-top: 25px;
+}
+.calc-body .just {
+    float: left;
+    width: 550px;
+}
+.radioboxes {
+    margin-top: 55px;
+}
+.ch-form {
+    margin-top: 55px;
+}
+.zakaz-calc {
+    margin-top: 55px;
+}
+.zakaz-calc input {
+    width: 320px;
+    height: 35px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: left;
+}
+.zakaz-calc .btn-primary {
+    font-size: 15px;
+    padding: 10px 100px;
+    text-transform: uppercase;
+    font-weight: lighter;
+    background: #fc6623;
+}
+.zakaz-calc .btn-primary:hover {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+.zakaz-calc form {
+    margin-top: 25px;
+    background: #efefef;
+    padding: 30px 40px;
+    width: 400px;
+}
+.forms {
+    margin-top: 25px;
+}
+#myModal1,
+#myModal2,
+#myModal3,
+#myModal4,
+.modal-body {
+    text-align: center;
+}
+hr {
+    width: 940px;
+    height: 10px;
+    margin: 0 auto;
+}
