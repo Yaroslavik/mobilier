@@ -20,3 +20,5 @@
 !/web/uploads/gallery
 /web/uploads/gallery/*
 !/web/uploads/gallery/.gitkeep
+
+/~

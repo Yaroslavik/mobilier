@@ -12,3 +12,58 @@
     padding: 5px 15px;
     width: 240px;
 }
+
+#about .title h2 {
+    margin-bottom: 40px;
+}
+
+#calc .just {
+    width: 100%;
+}
+
+#calc .radioboxes .alert {
+    margin-top: 40px;
+}
+
+#calc .ch-form .alert {
+    margin-top: 40px;
+}
+
+#calc .ch-form h4 {
+    margin-bottom: 20px;
+}
+
+#calc #input-size {
+    height: 35px;
+    padding: 0 5px;
+}
+
+#calc .btn-calculate {
+    background-color: #fc6623;
+    padding: 5px 20px;
+    height: 35px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#calc .btn-calculate:hover {
+    background-color: #D9534F;
+    border-color: #D43F3A;
+}
+
+#calc .summary {
+    display: none;
+}
+
+#calc .zakaz-calc input {
+    width: 316px;
+    padding: 0 5px;
+}
+
+.calc-modal .modal-body img {
+    margin-bottom: 30px;
+}
+
+.calc-modal .modal-body p {
+    margin: 0 10px;
+}

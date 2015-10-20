@@ -24,6 +24,19 @@ $(function () {
             $('#form_callback form').append('<h4>' + response.message + '</h4>');
         });
     });
+
+    // Калькулятор
+    $('#btn-calculate').on('click', function () {
+        var usdbyr = parseInt($('#usd-byr').val());
+        var matcost = parseInt($('input[name="matcost"]:checked').val());
+        var size = parseFloat($('#input-size').val());
+        var cost = Math.ceil(usdbyr * matcost * size / 1000) * 1000;
+        $('#summary').text(
+            isNaN(cost) ?
+                'Проверьте правильность ввода данных':
+                'Примерная стоимость кухни: ' + cost.toLocaleString() + 'р'
+            ).show(300);
+    });
 });
 
 $(window).on('load', function () {

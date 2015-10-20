@@ -15,6 +15,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/wow.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/appendix.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -33,7 +34,6 @@
             $("#contactform").validate();
         });
     </script>
-    <script src="{{ asset('bundles/app/js/twitterFetcher_min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/imagesloaded.pkgd.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/appear.js') }}"></script>
@@ -44,7 +44,6 @@
     <script src="{{ asset('bundles/app/js/main.js') }}"></script>
     <script src="{{ asset('bundles/app/js/min/plugins.min.js') }}"></script>
     <script src="{{ asset('bundles/app/js/min/main.min.js') }}"></script>
-    <script src="{{ asset('bundles/app/js/appendix.js') }}"></script>
 
     <div id="popup_contact" class="popup_block">
         <form id="form" action="{{ path('callback') }}" method="post">
@@ -59,7 +58,6 @@
                 </p>
                 <p>
                     *Ваши данные надежно защищены
-                    <a href="{{ path('page', {'url': 'privacy-policy'}) }}">политика конфиденциальности</a>
                 </p>
             </fieldset>
             <p class="submit">
