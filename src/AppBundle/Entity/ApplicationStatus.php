@@ -16,6 +16,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ApplicationStatus
 {
+    const
+        CODE_OPEN = 0,
+        CODE_CLOSED = 1;
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -27,6 +31,11 @@ class ApplicationStatus
      * @ORM\Column(type="string", length=50)
      */
     protected $title;
+
+    /**
+     * @ORM\Column(type="integer", length=20)
+     */
+    protected $code;
 
     public function __toString()
     {
@@ -65,5 +74,29 @@ class ApplicationStatus
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set code
+     *
+     * @param integer $code
+     *
+     * @return ApplicationStatus
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return integer
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 }

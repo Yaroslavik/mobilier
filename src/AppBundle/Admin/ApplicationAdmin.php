@@ -15,6 +15,11 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class ApplicationAdmin extends Admin
 {
+    protected $datagridValues = array(
+        '_sort_order' => 'DESC',
+        '_sort_by' => 'createdAt',
+    );
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper

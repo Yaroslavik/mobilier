@@ -12,12 +12,15 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 class ApplicationStatusAdmin extends Admin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('title');
+        $formMapper
+            ->add('title')
+            ->add('code', null, ['attr' => ['readonly' => true]]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -28,5 +31,10 @@ class ApplicationStatusAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('title');
+    }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection->remove('delete');
     }
 }

@@ -3,6 +3,9 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Application;
+use AppBundle\Entity\ApplicationStatus;
+use AppBundle\Entity\Config;
+use AppBundle\Entity\ConfigRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -123,17 +126,23 @@ class DefaultController extends Controller
      */
     public function callbackAction(Request $request)
     {
-        try {
-            $configuration = $this->get('app.configuration');
+        /** @var ConfigRepository $configuration */
+        $configuration = $this->get('app.configuration');
 
+        try {
             $name = $request->get('name');
             $phone = $request->get('phone');
             if (!$name || !$phone) throw new \Exception('Не указано имя и/или номер телефона.');
 
             // Сохранение заявки
+            $statusOpen = $this->getDoctrine()
+                ->getRepository('AppBundle:ApplicationStatus')
+                ->findOneBy(['code' => ApplicationStatus::CODE_OPEN]);
+
             $application = new Application();
             $application->setName($name);
             $application->setPhone($phone);
+            $application->setStatus($statusOpen);
             $em = $this->getDoctrine()->getManager();
             $em->persist($application);
             $em->flush();
@@ -154,8 +163,10 @@ class DefaultController extends Controller
             //$message->setBody($messageBody);
             //$mailer->send($message);
 
+            $data['status'] = 'success';
             $data['message'] = $configuration->get('CALLBACK_SUCCESS');
         } catch(\Exception $e) {
+            $data['status'] = 'fail';
             $data['message'] = $this->get('kernel')->isDebug() ? $e->getMessage() : $configuration->get('CALLBACK_FAIL');
         }
 

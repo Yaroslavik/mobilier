@@ -76,16 +76,16 @@
                         Не знаете размер? Воспользуйтесь услугой <a class="poplight alert-link" rel="popup_contact" href="#?w=600">бесплатный замер.</a>
                     </div>
                 </div>
-                <div class="zakaz-calc">
+                <div class="zakaz-calc" id="zakaz-calc">
                     <h3>Отправьте заявку и наш специалист свяжется с Вами в течении 2 часов</h3>
-                    <form>
+                    <form action="{{ path('callback') }}" method="post">
                         <p>*Ваше имя</p>
                         <input type="text" name="name" placeholder="Ваше имя">
                         <br/>
                         <p>*Ваш номер телефона</p>
-                        <input type="tel" name="tel" placeholder="Ваш номер телефона">
+                        <input type="text" name="phone" placeholder="Ваш номер телефона">
                         <br/>
-                        <a class="btn btn-primary" href="#">Заказать звонок</a>
+                        <button type="submit" class="btn btn-primary">Заказать звонок</button>
                     </form>
                 </div>
             </div>

@@ -3,3 +3,4 @@ breadcrumb.link_application_status_list: Статусы заявок
 list.label_title: Статус
 filter.label_title: Статус
 form.label_title: Статус
+form.label_code: Код

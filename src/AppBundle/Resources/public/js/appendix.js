@@ -3,26 +3,27 @@
  */
 
 $(function () {
-    $('#popup_contact form').on('submit', function (e) {
-        e.preventDefault();
-        var name = $(this).find('input[name="name"]').val();
-        var phone = $(this).find('input[name="phone"]').val();
-        $.post($(this).attr('action'), {name: name, phone: phone}, function (response) {
-            //console.log(response);
-            $('#popup_contact form').remove();
-            $('#popup_contact').append('<h2>' + response.message + '</h2>');
-        });
-    });
+    // Заявка на звонок
+    function sendApplication(action, name, phone, callback) {
+        // Проверка
+        if (!action || !name || !phone) {
+            alert('Заполните поля "Имя" и "Телефон"');
+            return false;
+        }
 
-    $('#form_callback form').on('submit', function (e) {
+        $.post(action, {name: name, phone: phone}, callback);
+    }
+
+    $('#form, #form_callback form, #zakaz-calc form').on('submit', function (e) {
         e.preventDefault();
-        var name = $(this).find('input[name="name"]').val();
-        var phone = $(this).find('input[name="phone"]').val();
-        $.post($(this).attr('action'), {name: name, phone: phone}, function (response) {
-            //console.log(response);
-            $('#form_callback form .controls').remove();
-            $('#form_callback form').append('<h4>' + response.message + '</h4>');
-        });
+        sendApplication(
+            $(this).attr('action'),
+            $(this).find('input[name="name"]').val(),
+            $(this).find('input[name="phone"]').val(),
+            function (response) {
+                alert(response.message);
+            }
+        );
     });
 
     // Калькулятор
