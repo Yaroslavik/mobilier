@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 
 class PageAdmin extends Admin
 {
@@ -39,5 +40,12 @@ class PageAdmin extends Admin
             ->addIdentifier('title')
             ->add('slug')
             ->add('visible');
+    }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection
+            ->remove('delete')
+            ->remove('create');
     }
 }
