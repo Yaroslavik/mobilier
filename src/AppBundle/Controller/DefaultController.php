@@ -60,7 +60,7 @@ class DefaultController extends Controller
     public function galleryAction()
     {
         // Images
-        $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getVisibleItems();
+        $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getGalleryItems();
         return [
             'portfolioItems' => $portfolioItems,
         ];

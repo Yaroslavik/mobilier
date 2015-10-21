@@ -41,7 +41,7 @@ class PortfolioItemAdmin extends Admin
             ->add('file', 'file', $fileFieldOptions)
             ->add('description', null, ['required' => false])
             ->add('order')
-            ->add('visible', null, ['required' => false])
+            ->add('inGallery', null, ['required' => false])
             ->add('onHomepage', null, ['required' => false]);
     }
 
@@ -49,7 +49,7 @@ class PortfolioItemAdmin extends Admin
     {
         $datagridMapper
             ->add('title')
-            ->add('visible')
+            ->add('inGallery')
             ->add('onHomepage');
     }
 
@@ -58,7 +58,7 @@ class PortfolioItemAdmin extends Admin
         $listMapper
             ->add('file', null, ['template' => 'AppBundle:Admin:list_field_image.html.twig'])
             ->addIdentifier('title')
-            ->add('visible')
+            ->add('inGallery')
             ->add('onHomepage');
     }
 }

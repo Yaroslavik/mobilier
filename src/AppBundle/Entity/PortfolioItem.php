@@ -56,7 +56,7 @@ class PortfolioItem
     /**
      * @ORM\Column(type="boolean")
      */
-    protected $visible = true;
+    protected $inGallery = true;
 
     /**
      * @ORM\Column(type="boolean")
@@ -242,30 +242,6 @@ class PortfolioItem
     }
 
     /**
-     * Set visible
-     *
-     * @param boolean $visible
-     *
-     * @return PortfolioItem
-     */
-    public function setVisible($visible)
-    {
-        $this->visible = $visible;
-
-        return $this;
-    }
-
-    /**
-     * Get visible
-     *
-     * @return boolean
-     */
-    public function getVisible()
-    {
-        return $this->visible;
-    }
-
-    /**
      * Set onHomepage
      *
      * @param boolean $onHomepage
@@ -311,5 +287,29 @@ class PortfolioItem
     public function getFilename()
     {
         return $this->filename;
+    }
+
+    /**
+     * Set inGallery
+     *
+     * @param boolean $inGallery
+     *
+     * @return PortfolioItem
+     */
+    public function setInGallery($inGallery)
+    {
+        $this->inGallery = $inGallery;
+
+        return $this;
+    }
+
+    /**
+     * Get inGallery
+     *
+     * @return boolean
+     */
+    public function getInGallery()
+    {
+        return $this->inGallery;
     }
 }
