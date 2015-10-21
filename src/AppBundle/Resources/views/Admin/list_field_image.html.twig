@@ -2,6 +2,6 @@
 
 {% block field %}
     <div>
-        <img src="/{{ object.getWebPath() }}" style="max-width: 200px;">
+        <img src="{{ object.getThumb('small') }}" style="max-width: 200px;">
     </div>
 {% endblock %}

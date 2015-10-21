@@ -8,6 +8,8 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Utils\ImageManager;
+use AppBundle\Utils\ThumbSetting;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -65,6 +67,36 @@ class PortfolioItem
      */
     protected $onHomepage = true;
 
+    protected $thumbs = [
+        'small' => [
+            'width' => 500,
+            'height' => 280,
+            'type' => IMAGETYPE_JPEG,
+            'quality' => null,
+            'postfix' => null
+        ]
+    ];
+
+    protected function getThumbSettings($name = null)
+    {
+        $thumbs = [];
+        foreach ($this->thumbs as $key => $thumb) {
+            $thumbs[$key] = new ThumbSetting(
+                $thumb['width'],
+                $thumb['height'],
+                $thumb['type'],
+                $thumb['quality'],
+                $thumb['postfix']
+            );
+        }
+
+        if ($name !== null) {
+            return isset($thumbs[$name]) ? $thumbs[$name] : null;
+        }
+
+        return $thumbs;
+    }
+
     public function __toString()
     {
         return $this->title ? $this->title : 'Фотография';
@@ -80,6 +112,12 @@ class PortfolioItem
         return $this->filename ? static::UPLOAD_DIR . '/' . $this->filename : null;
     }
 
+    public function getThumb($name)
+    {
+        $thumb = $this->getThumbSettings($name);
+        return $thumb && $this->filename ? ImageManager::getThumbWebPath($this->getWebPath(), $thumb) : null;
+    }
+
     public function getAbsolutePath()
     {
         return $this->filename !== null ? $this->getUploadRootDir() . '/' . $this->filename : null;
@@ -90,11 +128,8 @@ class PortfolioItem
         $this->file = $file;
 
         if (isset($this->filename)) {
-            // store the old name to delete after the update
             $this->oldFilename = $this->filename;
             $this->filename = null;
-        } else {
-            $this->filename = 'initial';
         }
     }
 
@@ -105,7 +140,6 @@ class PortfolioItem
     public function preUpload()
     {
         if ($this->getFile() !== null) {
-            // do whatever you want to generate a unique name
             $filename = sha1(uniqid(mt_rand(), true));
             $this->filename = $filename . '.' . $this->getFile()->guessExtension();
         }
@@ -121,16 +155,12 @@ class PortfolioItem
             return;
         }
 
-        // if there is an error when moving the file, an exception will
-        // be automatically thrown by move(). This will properly prevent
-        // the entity from being persisted to the database on error
         $this->getFile()->move($this->getUploadRootDir(), $this->filename);
+        ImageManager::createThumbnails($this->getAbsolutePath(), $this->getThumbSettings());
 
-        // check if we have an old image
         if ($this->oldFilename !== null && \is_file($this->getUploadRootDir() . '/' . $this->oldFilename)) {
-            // delete the old image
             unlink($this->getUploadRootDir() . '/' . $this->oldFilename);
-            // clear the temp image path
+            ImageManager::deleteThumbs($this->getUploadRootDir() . '/' . $this->oldFilename);
             $this->oldFilename = null;
         }
 
@@ -145,6 +175,7 @@ class PortfolioItem
         $file = $this->getAbsolutePath();
         if (\is_file($file)) {
             unlink($file);
+            ImageManager::deleteThumbs($file);
         }
     }
 

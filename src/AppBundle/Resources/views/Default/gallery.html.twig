@@ -8,7 +8,7 @@
                 <div class="portfolio-item print">
                     <div class="portfolio">
                         <a href="{{ item.getWebPath() }}" data-lightbox-gallery="portfolio">
-                            <img src="{{ item.getWebPath() }}" alt="{{ item.getTitle() }}"/>
+                            <img src="{{ item.getThumb('small') }}" alt="{{ item.getTitle() }}"/>
                             <div class="portfolio-overlay">
                                 <div class="button">Увеличить</div>
                             </div>
