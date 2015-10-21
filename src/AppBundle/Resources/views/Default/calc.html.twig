@@ -66,10 +66,14 @@
                         </div>
                     </div>
                     <br/>
-                    <h4>Введите размер в метрах погонных</h4>
-                    <input type="text" id="input-size" name="size">
-                    <input type="hidden" id="usd-byr" name="usd-byr" value="{{ configuration.get('USDBYR')|replace({" ": ""}) }}">
-                    <button id="btn-calculate" class="btn btn-primary btn-calculate">Рассчитать</button>
+                    <div class="size-inputs">
+                        <h4>Введите размер в метрах</h4>
+                        <input type="hidden" id="usd-byr" name="usd-byr" value="{{ configuration.get('USDBYR')|replace({" ": ""}) }}">
+                        <label id="input-size-a">A: <input type="text" name="size-a"></label>
+                        <label id="input-size-b">B: <input type="text" name="size-b"></label>
+                        <label id="input-size-c">C: <input type="text" name="size-c"></label>
+                        <button id="btn-calculate" class="btn btn-primary btn-calculate">Рассчитать</button>
+                    </div>
                     <h3 id="summary"></h3>
                     <div class="alert alert-dismissible alert-info">
                         {#<button type="button" class="close" data-dismiss="alert">×</button>#}

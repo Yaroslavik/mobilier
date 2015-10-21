@@ -33,9 +33,18 @@
     margin-bottom: 20px;
 }
 
-#calc #input-size {
+#calc .size-inputs input[type="text"] {
     height: 35px;
     padding: 0 5px;
+}
+
+#calc .size-inputs {
+    width: 200px;
+    text-align: center;
+}
+
+#calc .size-inputs label {
+    display: block;
 }
 
 #calc .btn-calculate {
