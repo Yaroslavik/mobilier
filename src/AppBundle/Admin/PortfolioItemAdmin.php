@@ -17,24 +17,12 @@ class PortfolioItemAdmin extends Admin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        // get the current Image instance
         $image = $this->getSubject();
 
-        // use $fileFieldOptions so we can add other options to the field
         $fileFieldOptions = array('required' => false);
-        if ($image && ($webPath = $image->getWebPath())) {
-            // get the container so the full path to the image can be set
-            $container = $this->getConfigurationPool()->getContainer();
-            $fullPath = $container->get('request')->getBasePath() . '/' . $webPath;
-
-            // add a 'help' option containing the preview's img tag
-            $fileFieldOptions['help'] = '<img src="'.$fullPath.'" class="admin-preview" style="max-width: 100%" />';
+        if ($image && $image->getWebPath()) {
+            $fileFieldOptions['help'] = '<img src="' . $image->getWebPath() . '" class="admin-preview">';
         }
-
-        $formMapper
-            // ... other fields ...
-            ->add('file', 'file', $fileFieldOptions)
-        ;
 
         $formMapper
             ->add('title')

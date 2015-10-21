@@ -19,6 +19,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  */
 class PortfolioItem
 {
+    const UPLOAD_DIR = '/uploads/gallery';
+
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -68,19 +70,14 @@ class PortfolioItem
         return $this->title ? $this->title : 'Фотография';
     }
 
-    protected function getUploadDir()
-    {
-        return 'uploads/gallery';
-    }
-
     protected function getUploadRootDir()
     {
-        return __DIR__ . '/../../../web/' . $this->getUploadDir();
+        return WEB_DIR . static::UPLOAD_DIR;
     }
 
     public function getWebPath()
     {
-        return $this->filename ? $this->getUploadDir() . '/' . $this->filename : null;
+        return $this->filename ? static::UPLOAD_DIR . '/' . $this->filename : null;
     }
 
     public function getAbsolutePath()
