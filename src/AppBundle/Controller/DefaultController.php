@@ -4,7 +4,6 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Application;
 use AppBundle\Entity\ApplicationStatus;
-use AppBundle\Entity\Config;
 use AppBundle\Entity\ConfigRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -14,6 +13,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
+use Symfony\Component\Validator\Constraints;
 
 class DefaultController extends Controller
 {
@@ -147,6 +147,23 @@ class DefaultController extends Controller
             $em->persist($application);
             $em->flush();
 
+            // Проверка email менеджера
+            $email = trim($configuration->get('EMAIL_MANAGER'));
+            $notBlankConstraint = new Constraints\NotBlank();
+            $emailConstraint = new Constraints\Email();
+
+            $constraintViolations = $this->get('validator')->validate(
+                $email,
+                [$notBlankConstraint, $emailConstraint]
+            );
+
+            $errors = [];
+            foreach ($constraintViolations as $violation) {
+                $errors[] = $violation->getMessage();
+            }
+
+            if ($constraintViolations->count()) throw new \Exception(join(' ', $errors) . $email);
+
             // Рендер письма
             $messageBody = $this->get('templating')->render('AppBundle::message_callback.html.twig', [
                 'name' => $name,
@@ -155,13 +172,16 @@ class DefaultController extends Controller
             ]);
 
             // Отправка письма
-            /** @mytodo Протестировать отправку на продакшене */
-            //$mailer = $this->get('mailer');
+            $mailer = $this->get('mailer');
             /** @var \Swift_Message $message */
-            //$message = $mailer->createMessage();
-            //$message->setTo($configuration->get('EMAIL_MANAGER'));
-            //$message->setBody($messageBody);
-            //$mailer->send($message);
+            $message = $mailer->createMessage();
+            $message->setFrom(['manager@mobilier.by' => 'Mobilier.by'])
+                ->setTo($email)
+                ->setSubject('Заявка на звонок')
+                ->setBody($messageBody)
+                ->setContentType('text/html');
+
+            $this->get('mailer')->send($message);
 
             $data['status'] = 'success';
             $data['message'] = $configuration->get('CALLBACK_SUCCESS');

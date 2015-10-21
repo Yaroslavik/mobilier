@@ -21,6 +21,7 @@ $(function () {
             $(this).find('input[name="name"]').val(),
             $(this).find('input[name="phone"]').val(),
             function (response) {
+                //console.log(response);
                 alert(response.message);
             }
         );
