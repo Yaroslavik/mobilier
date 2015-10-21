@@ -20,7 +20,7 @@ class ApplicationStatusAdmin extends Admin
     {
         $formMapper
             ->add('title')
-            ->add('code', null, ['attr' => ['readonly' => true]]);
+            ->add('code', null, ['required' => false, 'attr' => ['readonly' => true]]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

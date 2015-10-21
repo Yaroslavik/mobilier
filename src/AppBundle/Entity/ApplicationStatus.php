@@ -33,13 +33,13 @@ class ApplicationStatus
     protected $title;
 
     /**
-     * @ORM\Column(type="integer", length=20)
+     * @ORM\Column(type="integer", length=20, nullable=true)
      */
     protected $code;
 
     public function __toString()
     {
-        return $this->title;
+        return $this->title ? : 'Статус';
     }
 
     /**
