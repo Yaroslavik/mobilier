@@ -44,6 +44,13 @@ class DefaultController extends Controller
             }
         }
 
+        // SEO
+        $config = $this->get('app.configuration');
+        $this->get('sonata.seo.page')
+            ->setTitle($config->get('META_TITLE_HOMEPAGE'))
+            ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_HOMEPAGE'))
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_HOMEPAGE'));
+
         return [
             'portfolioItems' => $portfolioItems,
             'firstComments' => $firstComments,
@@ -61,6 +68,14 @@ class DefaultController extends Controller
     {
         // Images
         $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getGalleryItems();
+
+        // SEO
+        $config = $this->get('app.configuration');
+        $this->get('sonata.seo.page')
+            ->setTitle($config->get('META_TITLE_GALLERY'))
+            ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_GALLERY'))
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_GALLERY'));
+
         return [
             'portfolioItems' => $portfolioItems,
         ];
@@ -74,6 +89,13 @@ class DefaultController extends Controller
      */
     public function servicesAction()
     {
+        // SEO
+        $config = $this->get('app.configuration');
+        $this->get('sonata.seo.page')
+            ->setTitle($config->get('META_TITLE_SERVICES'))
+            ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_SERVICES'))
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_SERVICES'));
+
         return [];
     }
 
@@ -85,6 +107,13 @@ class DefaultController extends Controller
      */
     public function informationAction()
     {
+        // SEO
+        $config = $this->get('app.configuration');
+        $this->get('sonata.seo.page')
+            ->setTitle($config->get('META_TITLE_INFO'))
+            ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_INFO'))
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_INFO'));
+
         return [];
     }
 
@@ -96,6 +125,13 @@ class DefaultController extends Controller
      */
     public function calcAction()
     {
+        // SEO
+        $config = $this->get('app.configuration');
+        $this->get('sonata.seo.page')
+            ->setTitle($config->get('META_TITLE_CALC'))
+            ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_CALC'))
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_CALC'));
+
         return [];
     }
 
@@ -113,6 +149,12 @@ class DefaultController extends Controller
         if (!$page) {
             throw new NotFoundHttpException("Страница не найдена.");
         }
+
+        // SEO
+        $this->container->get('sonata.seo.page')
+            ->setTitle($page->getTitle())
+            ->addMeta('name', 'keywords', $page->getMetaKeywords())
+            ->addMeta('name', 'description', $page->getMetaDescription());
 
         return [
             'page' => $page,

@@ -20,7 +20,7 @@
 
 {% block body %}
     {% include "@App/header.html.twig" %}
-    {% include "@App/navigation.html.twig" %}
+    {% include "@App/navigation.html.twig" with {'displayCalcLink': (displayCalcLink is defined) ? displayCalcLink : true} %}
     {% block content %}{% endblock %}
     {% include "@App/footer.html.twig" with {'mapWithTitle': (mapWithTitle is defined) ? mapWithTitle : false} %}
 

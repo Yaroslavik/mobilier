@@ -19,3 +19,8 @@
         </div>
     </div>
 </nav>
+{% if (displayCalcLink is not defined or displayCalcLink) %}
+    <div class="fixed-link">
+        <a href="{{ path('calc') }}" class="btn btn-success">Онлайн-расчет кухни</a>
+    </div>
+{% endif %}

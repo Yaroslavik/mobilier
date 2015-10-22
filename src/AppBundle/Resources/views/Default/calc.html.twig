@@ -1,5 +1,7 @@
 {% extends '@App/layout.html.twig' %}
 
+{% set displayCalcLink = false %}
+
 {% block content %}
     <div id="calc">
         <div class="container">
@@ -13,22 +15,22 @@
                 <div class="radioboxes">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_PLASTIC')|replace({" ": ""}) }}" checked> Кухня из <a href="#" data-toggle="modal" data-target="#myModal1">пластика</a>
+                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_PLASTIC')|replace({" ": ""}) }}" checked> Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal1">пластика</a>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_ACRYLIC')|replace({" ": ""}) }}"> Кухня из <a href="#" data-toggle="modal" data-target="#myModal2">акрила</a>
+                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_ACRYLIC')|replace({" ": ""}) }}"> Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal2">акрила</a>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_PARTICLEBOARD')|replace({" ": ""}) }}"> Кухня из <a href="#" data-toggle="modal" data-target="#myModal3">ДСП</a>
+                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_PARTICLEBOARD')|replace({" ": ""}) }}"> Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal3">ДСП</a>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_MDF')|replace({" ": ""}) }}"> Кухня из <a href="#" data-toggle="modal" data-target="#myModal4">крашеного МДФ</a>
+                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_MDF')|replace({" ": ""}) }}"> Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal4">крашеного МДФ</a>
                         </label>
                     </div>
                     <div class="alert alert-dismissible alert-warning">
@@ -101,7 +103,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     {#<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
-                    <h4 class="modal-title" id="myModalLabel">Кухни из пластика</h4>
+                    <h4 class="modal-title" id="myModalLabel">Кухни, фасады из пластика</h4>
                 </div>
                 <div class="modal-body">
                     <img src="{{ asset('bundles/app/img/stati/plastik.jpg') }}" alt="кухня из пластика">
@@ -120,7 +122,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     {#<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
-                    <h4 class="modal-title" id="myModalLabel">Кухни из акрила</h4>
+                    <h4 class="modal-title" id="myModalLabel">Кухни, фасады из акрила</h4>
                 </div>
                 <div class="modal-body">
                     <img src="{{ asset('bundles/app/img/stati/akril.jpg') }}" alt="кухня из акрила">
@@ -139,7 +141,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     {#<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
-                    <h4 class="modal-title" id="myModalLabel">Кухни из ДСП</h4>
+                    <h4 class="modal-title" id="myModalLabel">Кухни, фасады из ДСП</h4>
                 </div>
                 <div class="modal-body">
                     <img src="{{ asset('bundles/app/img/stati/ldsp.jpg') }}" alt="Кухни из ДСП">
@@ -158,7 +160,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     {#<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
-                    <h4 class="modal-title" id="myModalLabel">Кухни из крашеного МДФ</h4>
+                    <h4 class="modal-title" id="myModalLabel">Кухни, фасады из крашеного МДФ</h4>
                 </div>
                 <div class="modal-body">
                     <img src="{{ asset('bundles/app/img/stati/kr-mdf.jpg') }}" alt="кухня из пластика">

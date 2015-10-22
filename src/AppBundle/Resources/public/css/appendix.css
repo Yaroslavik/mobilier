@@ -17,6 +17,11 @@
     margin-bottom: 40px;
 }
 
+#about p {
+    font-size: 23px;
+    color: #0a0a0a;
+}
+
 #calc .just {
     width: 100%;
 }

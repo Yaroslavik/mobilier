@@ -1113,3 +1113,21 @@ hr {
     height: 10px;
     margin: 0 auto;
 }
+
+.fixed-link {
+    position: fixed;
+    background: rgba(39, 38, 38, 0.77);
+    z-index: 1000;
+    padding: 10px 9px;
+    right: 0px;
+}
+.fixed-link .btn-success {
+    background: rgba(255, 0, 0, 0.77);
+    border: none;
+    font-size: 15px;
+   
+    border-radius: 0px;
+}
+.fixed-link .btn-success:hover {
+    background: #f76969;
+}

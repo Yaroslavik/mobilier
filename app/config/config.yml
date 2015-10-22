@@ -133,7 +133,7 @@ sonata_admin:
                                 <h3 class='panel-title'>Добро пожаловать!</h3>
                             </div>
                             <div class='panel-body'>
-                                Вы вошли в панель управления сайтом <a href="http://mobiler.off" target="_blank">&laquo;Мобильер&raquo;</a>.
+                                Вы вошли в панель управления сайтом <a href="%site_host%" target="_blank">&laquo;Мобильер&raquo;</a>.
                                 Выберите материал для редактирования или создайте новый. Приятной работы!
                             </div>
                         </div>
@@ -178,8 +178,8 @@ sonata_seo:
         default:          sonata.seo.page.default
         metas:
             name:
-                keywords:             Ключевые слова # @mytodo заменить на реальные значения
-                description:          Описание
+                keywords:             ~
+                description:          ~
                 robots:               index, follow
 
             property:
