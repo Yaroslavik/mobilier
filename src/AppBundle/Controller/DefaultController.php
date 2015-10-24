@@ -66,8 +66,8 @@ class DefaultController extends Controller
      */
     public function galleryAction()
     {
-        // Images
-        $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getGalleryItems();
+        // Categories
+        $categories = $this->getDoctrine()->getRepository('AppBundle:PortfolioCategory')->getVisibleCategories();
 
         // SEO
         $config = $this->get('app.configuration');
@@ -77,7 +77,7 @@ class DefaultController extends Controller
             ->addMeta('name', 'description', $config->get('META_DESCRIPTION_GALLERY'));
 
         return [
-            'portfolioItems' => $portfolioItems,
+            'categories' => $categories,
         ];
     }
 

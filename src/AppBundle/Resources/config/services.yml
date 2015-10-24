@@ -71,6 +71,18 @@ services:
             - [setTranslationDomain, [portfolio_item]]
             - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
 
+    sonata.admin.portfolio_category:
+        class: AppBundle\Admin\PortfolioCategoryAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Portfolio Category" }
+        arguments:
+            - ~
+            - AppBundle\Entity\PortfolioCategory
+            - ~
+        calls:
+            - [setTranslationDomain, [portfolio_category]]
+            - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+
     app.configuration:
         class: Doctrine\ORM\EntityRepository
         factory_service: doctrine.orm.default_entity_manager

@@ -1,15 +1,15 @@
 Portfolio Item: Фотография
 breadcrumb.link_portfolio_item_list: Портфолио
 list.label_title: Заголовок
-list.label_in_gallery: В галерее
-list.label_on_homepage: На главной
 list.label_file: Изображение
+list.label_category: Категория
+list.label_visible: Видимый
 filter.label_title: Заголовок
-filter.label_in_gallery: В галерее
-filter.label_on_homepage: На главной
+filter.label_category: Категория
+filter.label_visible: Видимый
 form.label_title: Заголовок
 form.label_description: Описание
 form.label_order: Порядок
-form.label_in_gallery: В галерее
-form.label_on_homepage: На главной
 form.label_file: Изображение
+form.label_visible: Видимый
+form.label_category: Категория

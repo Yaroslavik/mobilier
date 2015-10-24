@@ -54,7 +54,7 @@ class Application
     protected $comment;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ApplicationStatus", inversedBy="status")
+     * @ORM\ManyToOne(targetEntity="ApplicationStatus")
      * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
      **/
     protected $status;

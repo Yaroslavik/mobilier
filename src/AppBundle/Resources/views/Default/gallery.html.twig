@@ -1,21 +1,27 @@
 {% extends '@App/layout.html.twig' %}
 
 {% block content %}
-    <hr>
     <section id="portfolio" class="portfolio padding-large text-center">
-        <div class="portfolio-wrapper margin-bottom-medium">
-            {% for item in portfolioItems %}
-                <div class="portfolio-item print">
-                    <div class="portfolio">
-                        <a href="{{ item.getWebPath() }}" data-lightbox-gallery="portfolio">
-                            <img src="{{ item.getThumb('small') }}" alt="{{ item.getTitle() }}"/>
-                            <div class="portfolio-overlay">
-                                <div class="button">Увеличить</div>
+        {% for category in categories %}
+            <div class="title">
+                <h2>{{ category.getTitle() }}</h2>
+            </div>
+            <div class="portfolio-wrapper margin-bottom-medium">
+                {% for item in category.getItems() %}
+                    {% if item.getVisible() %}
+                        <div class="portfolio-item print">
+                            <div class="portfolio">
+                                <a href="{{ item.getWebPath() }}" data-lightbox-gallery="portfolio">
+                                    <img src="{{ item.getThumb('small') }}" alt="{{ item.getTitle() }}"/>
+                                    <div class="portfolio-overlay">
+                                        <div class="button">Увеличить</div>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
     </section>
 {% endblock %}

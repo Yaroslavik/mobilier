@@ -15,18 +15,10 @@ class PortfolioItemRepository extends EntityRepository
     public function getHomepageItems($count = 12)
     {
         return $this->createQueryBuilder('portfolio_item')
-            ->where('portfolio_item.onHomepage = 1')
+            ->where('portfolio_item.visible = 1')
+            ->andWhere('portfolio_item.category is null')
             ->orderBy('portfolio_item.order')
             ->setMaxResults($count)
-            ->getQuery()
-            ->execute();
-    }
-
-    public function getGalleryItems()
-    {
-        return $this->createQueryBuilder('portfolio_item')
-            ->where('portfolio_item.inGallery = 1')
-            ->orderBy('portfolio_item.order')
             ->getQuery()
             ->execute();
     }

@@ -60,12 +60,13 @@ class PortfolioItem
     /**
      * @ORM\Column(type="boolean")
      */
-    protected $inGallery = true;
+    protected $visible = true;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    protected $onHomepage = true;
+     * @ORM\ManyToOne(targetEntity="PortfolioCategory", inversedBy="items")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     **/
+    protected $category;
 
     protected $thumbs = [
         'small' => [
@@ -270,30 +271,6 @@ class PortfolioItem
     }
 
     /**
-     * Set onHomepage
-     *
-     * @param boolean $onHomepage
-     *
-     * @return PortfolioItem
-     */
-    public function setOnHomepage($onHomepage)
-    {
-        $this->onHomepage = $onHomepage;
-
-        return $this;
-    }
-
-    /**
-     * Get onHomepage
-     *
-     * @return boolean
-     */
-    public function getOnHomepage()
-    {
-        return $this->onHomepage;
-    }
-
-    /**
      * Set filename
      *
      * @param string $filename
@@ -339,5 +316,53 @@ class PortfolioItem
     public function getInGallery()
     {
         return $this->inGallery;
+    }
+
+    /**
+     * Set visible
+     *
+     * @param boolean $visible
+     *
+     * @return PortfolioItem
+     */
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+
+        return $this;
+    }
+
+    /**
+     * Get visible
+     *
+     * @return boolean
+     */
+    public function getVisible()
+    {
+        return $this->visible;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \AppBundle\Entity\PortfolioCategory $category
+     *
+     * @return PortfolioItem
+     */
+    public function setCategory(\AppBundle\Entity\PortfolioCategory $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \AppBundle\Entity\PortfolioCategory
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }
