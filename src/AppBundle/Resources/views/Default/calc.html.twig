@@ -15,22 +15,30 @@
                 <div class="radioboxes">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_PLASTIC')|replace({" ": ""}) }}" checked> Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal1">пластика</a>
+                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_PLASTIC') }}"
+                                   minvalue="{{ configuration.get('COST_KITCHEN_PLASTIC_MIN') }}" checked>
+                            Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal1">пластика</a>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_ACRYLIC')|replace({" ": ""}) }}"> Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal2">акрила</a>
+                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_ACRYLIC') }}"
+                                   minvalue="{{ configuration.get('COST_KITCHEN_ACRYLIC_MIN') }}">
+                            Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal2">акрила</a>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_PARTICLEBOARD')|replace({" ": ""}) }}"> Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal3">ДСП</a>
+                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_PARTICLEBOARD') }}"
+                                   minvalue="{{ configuration.get('COST_KITCHEN_PARTICLEBOARD_MIN') }}">
+                            Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal3">ДСП</a>
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_MDF')|replace({" ": ""}) }}"> Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal4">крашеного МДФ</a>
+                            <input type="radio" name="matcost" value="{{ configuration.get('COST_KITCHEN_MDF') }}"
+                                   minvalue="{{ configuration.get('COST_KITCHEN_MDF_MIN') }}">
+                            Кухни, фасады из <a href="#" data-toggle="modal" data-target="#myModal4">крашеного МДФ</a>
                         </label>
                     </div>
                     <div class="alert alert-dismissible alert-warning">

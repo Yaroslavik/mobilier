@@ -5,7 +5,6 @@ html {
 body {
     height: 100%;
     font-family: 'Roboto Condensed', sans-serif;
-    font: 18px/19px;
     background: #fff;
     width: 100%;
 }
@@ -100,51 +99,59 @@ ul.navg li a {
     margin-top: 9px;
 }
 
-color: coral;
-
-}
 ul.navg li a:hover {
     text-decoration: none;
 }
+
 ul.navg li {
     display: inline-block;
 }
+
 #myCarousel {
     width: 100%;
 }
+
 .slider-caption {
     background: rgba(34, 34, 34, 0.71);
 }
+
 .carousel-inner {
     height: 100%;
 }
+
 .carousel-inner img {
     width: 100%;
 }
+
 #portf {
     margin-top: 50px;
 }
+
 .title {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
 }
+
 .title p {
     font-size: 16px;
     color: gray;
     text-transform: none;
     font-weight: lighter;
 }
+
 .title h2 {
     font-size: 50px;
     color: #606060;
 }
+
 #adv .title h2 {
     padding-top: 50px;
     color: #222;
     text-shadow: 1px 1px 3px #ffffff;
     font-size: 50px;
 }
+
 #adv {
     -webkit-margin-top: 50px;
     margin-top: 50px;
@@ -154,6 +161,7 @@ ul.navg li {
     background: #f4f3f3;
     background-size: cover;
 }
+
 .adv-box {
     -webkit-margin-top: 50px;
     -moz-margin-top: 50px;
@@ -161,29 +169,37 @@ ul.navg li {
     -o-margin-top: 50px;
     margin-top: 50px;
 }
+
 .text-left {
     text-align: left;
 }
+
 .text-right {
     text-align: right;
 }
+
 .text-center {
     text-align: center;
 }
+
 .adv-item {
     height: 330px;
     padding: 20px 30px;
 }
+
 .m-r-yes {
     margin-right: 50px;
 }
+
 .m-r-none {
     margin-right: 0;
 }
+
 .adv-item img {
     border: 10px outset rgb(178, 178, 178);
     box-shadow: 3px 3px 8px #222;
 }
+
 .adv-item h3 {
     text-transform: uppercase;
     font-weight: bold;
@@ -191,7 +207,9 @@ ul.navg li {
     color: #fff;
     text-shadow: 1px 1px 3px #222;
     background: rgba(0, 0, 0, 0.58);
+    padding: 5px 5px 5px 10px;
 }
+
 .adv-item p {
     font-size: 23px;
     -o-text-align: center;
@@ -199,28 +217,34 @@ ul.navg li {
     -o-font-weight: 500;
     color: #0a0a0a;
 }
+
 .row {
     width: 100%;
 }
+
 #bonus1 {
     width: 100%;
     -webkit-background-size: cover;
     background-size: cover;
     height: 400px;
 }
+
 #bonus3 {
     width: 100%;
     -webkit-background-size: cover;
     background-size: cover;
     height: 400px;
 }
+
 #bonus1 .b-item-text {
     margin-top: 80px;
 }
+
 #bonus1 .b-item-text a {
     margin-top: 50px;
     text-transform: uppercase;
 }
+
 .btn-primary {
     background: #f73d76;
     border: none;
@@ -228,6 +252,7 @@ ul.navg li {
     font-size: 15px;
     font-weight: bold;
 }
+
 #bonus1 .b-item-text h2 {
     color: #fff;
     text-shadow: 1px 1px 3px #222;
@@ -236,15 +261,18 @@ ul.navg li {
     font-weight: bold;
     font-size: 35px;
 }
+
 #bonus1 .b-item-text {
     background: rgba(34, 34, 34, 0.71);
     height: 200px;
     width: 500px;
     margin-top: 100px;
 }
+
 #bonus1 .b-item-text span {
     color: coral;
 }
+
 #bonus3 .b-item-text h2 {
     text-align: center;
     color: #fff;
@@ -253,25 +281,30 @@ ul.navg li {
     font-weight: bold;
     font-size: 35px;
 }
+
 #bonus3 .b-item-text {
     background: rgba(34, 34, 34, 0.71);
     height: 200px;
     width: 500px;
     margin-top: 100px
 }
+
 #bonus3 .b-item-text span {
     color: coral;
 }
+
 .b-item-text2 h2 {
     text-align: right;
     color: #222;
     text-shadow: 1px 1px 3px #fff;
 }
+
 #bonus2 {
     -webkit-background-size: cover;
     background-size: cover;
     height: 400px;
 }
+
 #bonus2 .b-item-text h2 {
     color: #fff;
     text-shadow: 1px 1px 3px #222;
@@ -280,123 +313,148 @@ ul.navg li {
     font-weight: bold;
     font-size: 35px;
 }
+
 #bonus2 .b-item-text {
     background: rgba(34, 34, 34, 0.71);
     height: 200px;
     width: 500px;
     margin-top: 100px;
 }
+
 #bonus2 .b-item-text span {
     background: #00baff;
 }
+
 .sposobi {
     margin-top: 50px;
 }
+
 #way .title span {
     color: #ff8000;
 }
+
 #map {
     margin-top: 50px;
 }
+
 .bonus-pic {
-    background: ;
     background-size: cover;
 }
+
 .s-list ul li {
     margin-left: 50px;
     list-style: circle;
     font-size: 16px;
 }
+
 .s-button {
     margin-top: 20px;
     text-align: center;
     font-size: 35px;
     text-transform: uppercase;
 }
+
 .s-button a {
     font-size: 20px;
 }
+
 .s-button .btn-danger {
     background: #5BC0DE;
     border: none;
 }
+
 .s-button .btn-danger:hover {
     background: #ff8000;
 }
-#footer {}
+
+#footer {
+}
+
 #autor {
     background: #333;
     text-align: center;
     margin-top: 15px;
     color: white;
 }
+
 .logo2 {
     margin-top: 50px;
 }
+
 .contacts2 {
     margin-top: -120px;
     font-size: 19px;
     text-align: center;
     font-weight: 500;
 }
+
 .contacts2 a {
     color: #ff8000;
     text-shadow: 1px 1px 3px #ffd68a;
 }
+
 .contacts2 ul li span {
     font-size: 17px;
 }
+
 .worktime2 {
     margin-right: 250px;
     margin-top: -100px;
 }
+
 .nav-bottom {
     margin-right: 500px;
     margin-top: -120px;
 }
+
 .sposobi {
     width: 540px;
     margin: 0 auto;
 }
+
 .sposob-1,
 .sposob-2,
 .sposob-3 {
     border: 1px solid #e0e0e0;
     padding: 20px 30px;
 }
+
 .portfolio a {
     margin: 15px;
     border: 8px solid #f2f2f2;
 }
 
-/* ========================================================================
-  2.10 Component: Portfolio
- ========================================================================== */
 .portfolio .filters {
     color: #9e9e9e;
 }
+
 .portfolio .filters li {
     display: inline;
 }
+
 .portfolio .filters li a {
     margin: 0 5px;
     color: #9e9e9e;
 }
+
 .portfolio .filters .active {
     color: #e74c3c;
     text-decoration: none;
 }
+
 .portfolio .portfolio-item {
     width: 25%;
     overflow: hidden;
     padding: 0;
     margin: 0;
 }
+
 .portfolio .portfolio-item a {
     position: relative;
     display: block;
     color: #fff;
 }
+
 .portfolio .portfolio-item a .portfolio-overlay {
     position: absolute;
     width: 100%;
@@ -409,16 +467,20 @@ ul.navg li {
     transition: all 0.3s ease-in-out;
     padding: 125px 20px;
 }
+
 .portfolio .portfolio-item a img {
     width: 100%;
     transition: all 1.2s linear;
 }
+
 .portfolio .portfolio-item a:hover > .portfolio-overlay {
     opacity: 1;
 }
+
 .portfolio .portfolio-item a:hover > img {
     transform: scale(1.2);
 }
+
 .portfolio > .button {
     border-color: #333;
     font-weight: normal;
@@ -426,17 +488,21 @@ ul.navg li {
     position: relative;
     z-index: 10;
 }
+
 .portfolio > .button i {
     font-size: 22px;
 }
+
 .filters li a:after {
     content: "/";
     margin-left: 10px;
     color: #9e9e9e;
 }
+
 .filters li:last-child > a:after {
     content: "";
 }
+
 .hvr-grow {
     display: inline-block;
     vertical-align: middle;
@@ -451,6 +517,7 @@ ul.navg li {
     -webkit-transition-property: transform;
     transition-property: transform;
 }
+
 .hvr-grow:hover,
 .hvr-grow:focus,
 .hvr-grow:active {
@@ -458,7 +525,6 @@ ul.navg li {
     transform: scale(1.1);
 }
 
-/* General button style (reset) */
 .portfolio-wrapper .button {
     padding: 20px 60px;
     display: inline-block;
@@ -474,6 +540,7 @@ ul.navg li {
     color: #fff;
     overflow: hidden;
 }
+
 .portfolio-wrapper .button:after {
     content: '';
     position: absolute;
@@ -494,59 +561,53 @@ ul.navg li {
     -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
+
 .portfolio-wrapper .button:hover,
 .button:active {
     color: #e74c3c;
 }
+
 .portfolio-wrapper .button:hover:after {
     height: 260%;
     opacity: 1;
 }
+
 .portfolio-wrapper .button:active:after {
     height: 400%;
     opacity: 1;
 }
+
 #portfolio {
     margin-top: 50px;
     width: 100%;
     text-align: center;
 }
+
 #portfolio .title p {
     text-align: center;
     margin: 0 auto;
 }
+
 .portfolio-wrapper {
     margin-top: 50px;
 }
 
-/* ========================================================================
-  2.10 Component: Portfolio
- ========================================================================== */
-
-/*MODAL/
-/*--Модальное окно--*/
 .popup_block {
     position: fixed;
     top: 50%;
     left: 50%;
     z-index: 99999;
     display: none;
-    /*--по умолчанию скрыт--*/
-    
     float: left;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     padding: 15px;
     border: 10px solid #6e6e6e;
-    /*-- скругленные углы--*/
-    
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     background: #fff;
-    /*--тени для блока--*/
-    
     -webkit-box-shadow: 0px 0px 20px #000;
     -moz-box-shadow: 0px 0px 20px #000;
     box-shadow: 0px 0px 20px #000;
@@ -554,20 +615,18 @@ ul.navg li {
     font-size: .9em;
 }
 
-/*--Фиксированное позиционирование для тупого IE6--*/
-*html #fade {
-    position: absolute;
-}
-*html .popup_block {
+* html #fade {
     position: absolute;
 }
 
-/*--блок заголовка--*/
+* html .popup_block {
+    position: absolute;
+}
+
 .note {
     margin: 0 0 30px 0;
 }
 
-/* формируем кнопку закрытия */
 .close {
     position: absolute;
     top: -18px;
@@ -594,16 +653,16 @@ ul.navg li {
     -o-transition: all ease .8s;
     transition: all ease .8s;
 }
+
 .close:before {
     color: rgba(255, 255, 255, 0.9);
     content: "X";
     text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
     font-size: 12px;
 }
+
 .close:hover {
     background-color: rgba(252, 20, 0, 0.8);
-    /*--крутим кнопку при наведении--*/
-    
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
@@ -611,25 +670,16 @@ ul.navg li {
     transform: rotate(360deg);
 }
 
-/* контактная форма */
 #form {
     overflow: hidden;
     margin: 0 auto;
     padding-top: 10px;
-    /* устанавливаем необходимую ширину формы в зависимости от дизайна
- ** форма отлично растягивается */
-    
     width: 100%;
-    /* закругляем углы */
-    
     background: none repeat scroll 0 0 #FFFFFF;
-    /* добавляем тени для блока*/
-    
     box-shadow: 0 0 5px #CCCCCC, 1px 1px 0 #FFFFFF inset, -1px -1px 0 #FFFFFF inset, 0 0 15px #DDDDDD inset;
     text-align: left;
 }
 
-/* формируем элементы внутри формы */
 #form fieldset {
     display: inline;
     float: left;
@@ -641,57 +691,48 @@ ul.navg li {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 17px;
 }
+
 #form p {
     margin: .5em 0;
 }
 
-/* подписи к полям ввода */
 #form label {
     display: block;
     margin-bottom: 1px;
     color: #5B5B5B;
 }
+
 #form input,
 #form textarea {
     padding: 15px;
-    /* отключаем бордюры у инпутов и текстового поля */
-    
     border: none;
-    /* закругляем углы полей ввода */
-    
     -webkit-border-radius: .3em;
     -o-border-radius: .3em;
     -moz-border-radius: .3em;
     border-radius: .3em;
     background-color: #F7F7F7;
-    /* добавляем внутренние тени у инпутов и текстового поля */
-    
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.3);
     color: #5B5B5B;
     font: 13px Trebuchet MS, Arial, Helvetica, Sans-Serif;
 }
+
 #form input {
-    /* устанавливаем ширину инпутов */
-    
     width: 90%;
 }
 
-/* изменяем оформление полей ввода при фокусе */
 #form input:focus,
 #form textarea:focus {
     background: #F2F2F2;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.4);
     color: #333;
 }
+
 #form textarea {
     overflow: auto;
     width: 100%;
-    /* устанавливаем ширину текстового поля */
-    
     height: 120px;
 }
 
-/* формируем нижний сектор формы */
 #form p.submit {
     clear: both;
     margin: 0;
@@ -699,78 +740,63 @@ ul.navg li {
     text-align: right;
 }
 
-/* оформляем кнопку отправки */
 #form button {
-    /* устанавливаем необходимую ширину кнопки */
-    /* закругляем углы кнопки */
-    
     color: #fff;
     text-transform: uppercase;
     font-size: 20px;
     border-radius: 5px;
     background-color: #f7612a;
-    /* градиентная заливка для современных браузеров */
-    
     background-image: -moz-linear-gradient(center top, #5BC0DE, #2F96B4);
     background-image: -webkit-linear-gradient(center top, #5bc0de, #2f96b4);
     background-image: -ms-linear-gradient(#5bc0de, #2f96b4);
     background-image: -o-linear-gradient(center top, #5BC0DE, #2F96B4);
-    /* добавляем внешние тени */
-    
     padding: 0 12px;
     text-align: center;
     line-height: 45px;
-    /* градиент для IE6-9 */
-    
-    filter: progid: DXImageTransform.Microsoft.Gradient(StartColorStr='#5BC0DE', EndColorStr='#2F96B4', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#5BC0DE', EndColorStr='#2F96B4', GradientType=0);
     cursor: pointer;
 }
 
-/* изменяем оформление кнопки при наведении */
 #form button:hover {
     box-shadow: none;
     text-shadow: 3px 3px 6px #fff;
     color: white;
 }
 
-/* изменяем оформление кнопки при нажатии */
 #form button:active {
     background-image: -moz-linear-gradient(#2F96B4, #5BC0DE);
-    /* Firefox */
-    
     background-image: -webkit-linear-gradient(#2F96B4, #5BC0DE);
-    /* Chrome, Safari */
-    
     background-image: -ms-linear-gradient(#2F96B4, #5BC0DE);
-    /* IE-10 */
-    
     background-image: -o-linear-gradient(#2F96B4, #5BC0DE);
-    /* Opera */
-    /* добавляем внутренние тени */
-    
-    filter: progid: DXImageTransform.Microsoft.Gradient(StartColorStr='#f0cc80', EndColorStr='#846b35', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#f0cc80', EndColorStr='#846b35', GradientType=0);
 }
 
-/* конец формы */
 .carousel-inner img {
     width: 100%;
     margin: 0 auto;
 }
-.navbar-default .navbar-nav>li {
+
+.navbar-default .navbar-nav > li {
     margin-top: 8px;
     margin-left: 30px;
 }
-.navbar-default .navbar-nav>li>a {
+
+.navbar-default .navbar-nav > li > a {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.navbar-default .navbar-nav>li>a.current {
+
+.navbar-default .navbar-nav > li > a.current {
     color: #e46948;
 }
-.navbar-default .navbar-nav>li>a.current:hover {
+
+.navbar-default .navbar-nav > li > a.current:hover {
     color: #e46948;
 }
-.navbar-default .navbar-nav>li>a:hover {}
+
+.navbar-default .navbar-nav > li > a:hover {
+}
+
 .navbar,
 .navbar-default,
 .navbar-static-top {
@@ -778,21 +804,25 @@ ul.navg li {
     border: none;
     height: 70px;
 }
+
 .is-sticky .navbar.navbar-default.navbar-static-top {
     width: 100%;
     height: 50px;
     background: rgba(255, 255, 255, 0.9);
 }
+
 #undefined-sticky-wrapper,
 .sticky-wrapper {
     height: 70px !important;
 }
+
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
     background: #fff;
     border-color: transparent;
     color: #ff4500;
 }
+
 .navbar-toggle {
     border-radius: 0;
     border: 1px solid #fff;
@@ -803,22 +833,27 @@ ul.navg li {
     padding: 0;
     color: #222;
 }
+
 .navbar-toggle:hover {
     background: #2d3640;
 }
+
 .navik {
     width: 100%;
-    margin: 10px;
+    margin: 10px 0;
 }
+
 #about p {
     font-size: 18px;
     line-height: 30px;
 }
+
 .w-box {
     margin-top: 50px;
     text-align: center;
     width: 100%;
 }
+
 .w-box .w-item {
     display: inline-block;
     text-align: center;
@@ -827,17 +862,20 @@ ul.navg li {
     padding: 5px 5px 25px;
     height: 380px;
 }
+
 .w-box .w-item img {
     width: 300px;
     height: 230px;
     margin: 20px;
     border: outset 5px #ff8000;
 }
+
 .w-box .w-item h3 {
     text-transform: uppercase;
     font-size: 19px;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 .w-box .w-item .btn-danger {
     text-transform: uppercase;
     padding: 5px 10px;
@@ -845,33 +883,41 @@ ul.navg li {
     background: #ff8000;
     border: none;
 }
+
 .w-box .w-item .btn-danger:hover {
     background: #c9843e;
 }
+
 #raboti {
     margin-bottom: 50px;
 }
+
 .f-descrip {
     box-shadow: 2px 2px 10px #222;
 }
+
 .f-item {
     height: 100%;
     padding: 30px 20px;
 }
+
 .f-item ul li {
     list-style: circle;
     margin-left: 32px;
     font-size: 18px;
 }
+
 .f-item img {
     margin-top: 35px;
     width: 400px;
     height: 300px;
 }
+
 .f-item-title {
     background: url(../img/stati/fasad.jpg) no-repeat center bottom;
     height: 400px;
 }
+
 .f-item-title h2 {
     font-size: 55px;
     color: #fff;
@@ -881,12 +927,14 @@ ul.navg li {
     padding-top: 160px;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 #banner {
     background: url(../img/banner1.jpg) no-repeat left;
     text-align: center;
     height: 650px;
     width: 100%;
 }
+
 .priziv h1 {
     color: #fff;
     text-shadow: 1px 1px 8px #222;
@@ -894,28 +942,35 @@ ul.navg li {
     font-size: 55px;
     background: rgba(0, 0, 0, 0.46);
 }
+
 .priziv h2 {
     color: #fff;
     text-shadow: 1px 1px 5px #222;
     text-transform: uppercase;
     font-size: 43px;
 }
+
 .priziv {
     padding-top: 100px;
 }
+
 .priziv h1 span {
     text-decoration: underline;
 }
+
 .priziv h2 span {
     color: #ff713d;
 }
+
 .zayavka {
     padding-top: 60px;
 }
+
 .zayavka ul li {
     display: inline-block;
     margin-right: 10px;
 }
+
 .zayavka .btn-danger {
     padding: 25px 30px;
     text-transform: uppercase;
@@ -923,9 +978,11 @@ ul.navg li {
     font-size: 25px;
     border: none;
 }
+
 .zayavka .btn-danger:hover {
     background: #f8a477;
 }
+
 .zayavka .btn-default {
     padding: 25px 30px;
     text-transform: uppercase;
@@ -933,9 +990,11 @@ ul.navg li {
     background: transparent;
     color: #fff;
 }
+
 #way .form {
     text-align: center;
 }
+
 #way form {
     border: 1px solid gray;
     width: 300px;
@@ -943,58 +1002,67 @@ ul.navg li {
     margin-top: 25px;
     background: rgba(255, 255, 255, 0.58);
 }
+
 #way .form form input {
     margin-top: 15px;
     padding: 5px 15px;
     width: 230px;
 }
+
 #way .form form a {
     margin-top: 15px;
     padding: 5px 15px;
     width: 240px;
 }
+
 #way .title {
     text-align: left;
     margin-top: 15px;
 }
+
 #way .title a {
     text-transform: uppercase;
     font-weight: lighter;
     font-size: 20px;
     color: #ff8000;
 }
+
 #way {
     background: url(../img/dost.jpg) no-repeat;
-    background: cover;
     height: 390px;
 }
+
 #respond {
     margin-top: 50px;
 }
+
 .respond-item p,
 h3,
 h4 {
     font-family: cabin, sans-serif;
 }
+
 .respond-item p {
     font-size: 16px;
 }
+
 .respond-item {
     box-shadow: 3px 3px 10px #222;
     height: 150px;
-    padding: 5px 15px;
-    ;
+    padding: 5px 15px;;
 }
+
 .r-box {
     margin-top: 50px;
 }
+
 #skinali {
     margin-top: 50px;
     background: url(../img/skinali.jpg) center bottom no-repeat;
     width: 100%;
-    height: 312px;
-    ;
+    height: 312px;;
 }
+
 #skinali h2 {
     font-size: 55px;
     color: white;
@@ -1002,6 +1070,7 @@ h4 {
     background: rgba(0, 0, 0, 0.56);
     text-transform: uppercase;
 }
+
 #skinali h3 {
     font-size: 55px;
     color: #fc6731;
@@ -1010,22 +1079,26 @@ h4 {
     font-family: "roboto condensed";
     font-weight: bold;
 }
+
 #skinali h4 {
     font-size: 35px;
     color: #292929;
     text-transform: uppercase;
     font-family: "roboto condensed";
 }
+
 .skinali-btn .btn-danger {
     padding: 10px 20px;
     font-size: 25px;
     font-weight: 500;
 }
+
 #skinali .textepta {
     margin-top: 19px;
 }
+
 .mapid {
-    background: url(../img/map.jpg)no-repeat center bottom;
+    background: url(../img/map.jpg) no-repeat center bottom;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
@@ -1033,6 +1106,7 @@ h4 {
     height: 450px;
     margin-top: 50px;
 }
+
 #respond .btn-primary {
     margin: 0 auto;
     background: #d3d3d3;
@@ -1042,38 +1116,48 @@ h4 {
     text-transform: uppercase;
     font-size: 30px;
 }
+
 #respond .btn-primary:hover {
     background: #c6c6c6;
 }
+
 .just {
     background: #ff580e;
     width: 55px;
     height: 5px;
     margin: 0 auto;
 }
+
 .title p {
     font-size: 25px;
 }
+
 .ch-form .radio {
     display: inline-block;
     margin: 25px;
 }
+
 .ch-form .alert {
     margin-top: 25px;
 }
+
 .calc-body .just {
     float: left;
     width: 550px;
 }
+
 .radioboxes {
     margin-top: 55px;
 }
+
 .ch-form {
     margin-top: 55px;
 }
+
 .zakaz-calc {
     margin-top: 55px;
 }
+
 .zakaz-calc input {
     width: 320px;
     height: 35px;
@@ -1081,6 +1165,7 @@ h4 {
     border-radius: 5px;
     text-align: left;
 }
+
 .zakaz-calc .btn-primary {
     font-size: 15px;
     padding: 10px 100px;
@@ -1088,19 +1173,23 @@ h4 {
     font-weight: lighter;
     background: #fc6623;
 }
+
 .zakaz-calc .btn-primary:hover {
     background-color: #d9534f;
     border-color: #d43f3a;
 }
+
 .zakaz-calc form {
     margin-top: 25px;
     background: #efefef;
     padding: 30px 40px;
     width: 400px;
 }
+
 .forms {
     margin-top: 25px;
 }
+
 #myModal1,
 #myModal2,
 #myModal3,
@@ -1108,6 +1197,7 @@ h4 {
 .modal-body {
     text-align: center;
 }
+
 hr {
     width: 940px;
     height: 10px;
@@ -1121,13 +1211,103 @@ hr {
     padding: 10px 9px;
     right: 0px;
 }
+
 .fixed-link .btn-success {
     background: rgba(255, 0, 0, 0.77);
     border: none;
     font-size: 15px;
-   
+
     border-radius: 0px;
 }
+
 .fixed-link .btn-success:hover {
     background: #f76969;
+}
+
+#popup_contact {
+    border-color: #2F96B4;
+}
+
+#popup_contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#way .form form button {
+    margin-top: 15px;
+    padding: 5px 15px;
+    width: 240px;
+}
+
+#about .title h2 {
+    margin-bottom: 40px;
+}
+
+#about p {
+    font-size: 23px;
+    color: #0a0a0a;
+}
+
+#calc .just {
+    width: 100%;
+}
+
+#calc .radioboxes .alert {
+    margin-top: 40px;
+}
+
+#calc .ch-form .alert {
+    margin-top: 40px;
+}
+
+#calc .ch-form h4 {
+    margin-bottom: 20px;
+}
+
+#calc .size-inputs input[type="text"] {
+    height: 35px;
+    padding: 0 5px;
+}
+
+#calc .size-inputs {
+    width: 200px;
+    text-align: center;
+}
+
+#calc .size-inputs label {
+    display: block;
+}
+
+#calc .btn-calculate {
+    background-color: #fc6623;
+    padding: 5px 20px;
+    height: 35px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#calc .btn-calculate:hover {
+    background-color: #D9534F;
+    border-color: #D43F3A;
+}
+
+#calc .summary {
+    display: none;
+}
+
+#calc .zakaz-calc input {
+    width: 316px;
+    padding: 0 5px;
+}
+
+.calc-modal .modal-body img {
+    margin-bottom: 30px;
+}
+
+.calc-modal .modal-body p {
+    margin: 0 10px;
+}
+
+.modal-content {
+    padding-top: 10px;
 }

@@ -49,15 +49,18 @@ $(function () {
     $('#btn-calculate').on('click', function () {
         var usdbyr = parseInt($('#usd-byr').val());
         var matcost = parseInt($('input[name="matcost"]:checked').val());
+        var matcostMin = parseInt($('input[name="matcost"]:checked').attr('minvalue'));
         var sizeA = toFloat($('#input-size-a input').val());
         var sizeB = toFloat($('#input-size-b input').val());
         var sizeC = toFloat($('#input-size-c input').val());
         var size = sizeA + sizeB + sizeC;
         var cost = Math.ceil(usdbyr * matcost * size / 1000) * 1000;
-        $('#summary').text(
+        var costMin = Math.ceil(usdbyr * matcostMin * size / 1000) * 1000;
+        $('#summary').html(
             size == 0 || isNaN(cost) ?
                 'Проверьте правильность ввода данных':
-                'Примерная стоимость кухни: ' + cost.toLocaleString() + 'р'
+                'Минимальная стоимость кухни: ' + costMin.toLocaleString() + 'р' + '<br>' +
+                'Средняя стоимость кухни: ' + cost.toLocaleString() + 'р'
             ).show(300);
     });
 

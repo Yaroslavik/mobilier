@@ -178,8 +178,8 @@ sonata_seo:
         default:          sonata.seo.page.default
         metas:
             name:
-                keywords:             ~
-                description:          ~
+                keywords:             ''
+                description:          ''
                 robots:               index, follow
 
             property:

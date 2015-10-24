@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
+use Symfony\Component\Form\CallbackTransformer;
 
 class ConfigAdmin extends Admin
 {
@@ -21,7 +22,13 @@ class ConfigAdmin extends Admin
         $formMapper
             ->add('title')
             ->add('mask', null, ['attr' => ['readonly' => true]])
-            ->add('content');
+            ->add('content')
+            ->get('content')
+            ->addModelTransformer(new CallbackTransformer(function ($value) {
+                return trim($value);
+            },function ($value) {
+                return $value;
+            }));
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
