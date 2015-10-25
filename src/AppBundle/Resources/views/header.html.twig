@@ -1,21 +1,32 @@
 <div id="header">
     <div class="container clearfix">
         <div class="logo">
-            <a href="{{ path('homepage') }}"><img src="{{ asset('bundles/app/img/logo.png.png') }}" alt="logo"></a>
+            <a href="{{ path('homepage') }}"><img src="{{ asset('bundles/app/img/logo.png.png') }}" alt="logo"></a><br/>
+
+            <p>г. Минск, ул. Шаранговича <br/>д. 25 павильон 215</p>
+
         </div>
-        <div class="contacts right">
-            <ul>
-                <li>{{ configuration.get('PHONE_1')|raw }}</li>
-                <li>{{ configuration.get('PHONE_2')|raw }}</li>
-                <li><a class="poplight" rel="popup_contact" href="#?w=600">Заказать звонок</a></li>
-            </ul>
+
+        <div class="contacts">
+
+            <div class="icons"><img src="{{ asset('bundles/app/img/vel.jpg') }}" alt="vel">
+                <img src="{{ asset('bundles/app/img/mts.jpg') }}" alt="vel"></div>
+           <div class="codes"><b>{{ configuration.get('PHONE_1')|raw }}</b><br/>
+               <b>{{ configuration.get('PHONE_2')|raw }}</b></div>
+            <div class="big-phone"> <span>{{ configuration.get('PHONE_3')|raw }}</span><br/></div>
+           <div class="link">   <a class="poplight" rel="popup_contact" href="#?w=600">Заказать звонок</a></div>
+
         </div>
-        <div class="worktime right">
-            <ul>
-                <li><b>{{ configuration.get('WORK_TIME') }}</b></li>
-                <li>{{ configuration.get('WORK_DAYS') }}</li>
-            </ul>
+
+
+
+    <div class="worktime right">
+        <ul>
+            <li><b>{{ configuration.get('WORK_TIME') }}</b></li>
+            <li>{{ configuration.get('WORK_DAYS') }}</li>
+        </ul>
         </div>
     </div>
+
 </div>
 <hr/>

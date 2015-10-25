@@ -6,20 +6,29 @@
             <p>К нам удобно добираться</p>
         </div>
     {% endif %}
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4703.424320774266!2d27.448113!3d53.883545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdaea361ba8fb%3A0xc352956304b13802!2z0YPQuy4g0KjQsNGA0LDQvdCz0L7QstC40YfQsCAyNSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sby!4v1444646578775" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4703.424320774266!2d27.448113!3d53.883545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdaea361ba8fb%3A0xc352956304b13802!2z0YPQuy4g0KjQsNGA0LDQvdCz0L7QstC40YfQsCAyNSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sby!4v1444646578775" width="50%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<div class="pavil">
+
+</div>
 </div>
 <div id="footer">
     <div class="container clearfix">
         <div class="logo2">
             <a href="{{ path('homepage') }}"><img src="{{ asset('bundles/app/img/logo.png.png') }}" alt="logo"></a>
         </div>
-        <div class="contacts2 right">
-            <ul>
-                <li>{{ configuration.get('PHONE_1')|raw }}</li>
-                <li>{{ configuration.get('PHONE_2')|raw }}</li>
-                <li><a class="poplight" rel="popup_contact" href="#?w=600">Заказать звонок</a></li>
-            </ul>
-        </div>
+        <div class="adress"><p>г. Минск, ул. Шаранговича д. 25 павильон 215</p></div>
+
+            <div class="contacts2 right">
+
+                <div class="icons"><img src="{{ asset('bundles/app/img/vel.jpg') }}" alt="vel">
+                    <img src="{{ asset('bundles/app/img/mts.jpg') }}" alt="vel"></div>
+                <div class="codes"><b>{{ configuration.get('PHONE_1')|raw }}</b><br/>
+                    <b>{{ configuration.get('PHONE_2')|raw }}</b></div>
+                <div class="big-phone"> <span>{{ configuration.get('PHONE_3')|raw }}</span><br/></div>
+                <div class="link">   <a class="poplight" rel="popup_contact" href="#?w=600">Заказать звонок</a></div>
+
+            </div>
+
         <div class="worktime2 right">
             <ul>
                 <li><b>{{ configuration.get('WORK_TIME') }}</b></li>
