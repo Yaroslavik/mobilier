@@ -30,10 +30,11 @@ services:
         arguments:
             - ~
             - AppBundle\Entity\Comment
-            - ~
+            - 'PixSortableBehaviorBundle:SortableAdmin'
         calls:
             - [setTranslationDomain, [comment]]
             - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+            - [setPositionService, [@pix_sortable_behavior.position]]
 
     sonata.admin.config:
         class: AppBundle\Admin\ConfigAdmin
@@ -66,10 +67,11 @@ services:
         arguments:
             - ~
             - AppBundle\Entity\PortfolioItem
-            - ~
+            - 'PixSortableBehaviorBundle:SortableAdmin'
         calls:
             - [setTranslationDomain, [portfolio_item]]
             - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+            - [setPositionService, [@pix_sortable_behavior.position]]
 
     sonata.admin.portfolio_category:
         class: AppBundle\Admin\PortfolioCategoryAdmin
@@ -78,10 +80,11 @@ services:
         arguments:
             - ~
             - AppBundle\Entity\PortfolioCategory
-            - ~
+            - 'PixSortableBehaviorBundle:SortableAdmin'
         calls:
             - [setTranslationDomain, [portfolio_category]]
             - [setLabelTranslatorStrategy, [@sonata.admin.label.strategy.underscore]]
+            - [setPositionService, [@pix_sortable_behavior.position]]
 
     app.configuration:
         class: Doctrine\ORM\EntityRepository

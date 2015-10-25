@@ -13,6 +13,7 @@ use AppBundle\Utils\ThumbSetting;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="PortfolioItemRepository")
@@ -54,6 +55,7 @@ class PortfolioItem
 
     /**
      * @ORM\Column(type="integer", name="`order`")
+     * @Gedmo\SortablePosition
      */
     protected $order = 0;
 
@@ -65,6 +67,7 @@ class PortfolioItem
     /**
      * @ORM\ManyToOne(targetEntity="PortfolioCategory", inversedBy="items")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @Gedmo\SortableGroup
      **/
     protected $category;
 

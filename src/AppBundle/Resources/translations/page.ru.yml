@@ -3,6 +3,7 @@ breadcrumb.link_page_list: Страницы
 list.label_title: Название
 list.label_visible: Видимый
 list.label_slug: Адрес
+list.label__action: Действия
 filter.label_title: Название
 filter.label_visible: Видимый
 form.label_title: Название

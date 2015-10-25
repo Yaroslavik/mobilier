@@ -4,6 +4,8 @@ list.label_title: Заголовок
 list.label_file: Изображение
 list.label_category: Категория
 list.label_visible: Видимый
+list.label_order: Порядок
+list.label__action: Действия
 filter.label_title: Заголовок
 filter.label_category: Категория
 filter.label_visible: Видимый

@@ -51,6 +51,12 @@ class ApplicationAdmin extends Admin
             ->addIdentifier('createdAt')
             ->add('name')
             ->add('phone')
-            ->add('status');
+            ->add('status')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ));
     }
 }

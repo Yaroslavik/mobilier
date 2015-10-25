@@ -8,9 +8,9 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\EntityRepository;
+use Gedmo\Sortable\Entity\Repository\SortableRepository;
 
-class PortfolioItemRepository extends EntityRepository
+class PortfolioItemRepository extends SortableRepository
 {
     public function getHomepageItems($count = 12)
     {
@@ -19,6 +19,14 @@ class PortfolioItemRepository extends EntityRepository
             ->andWhere('portfolio_item.category is null')
             ->orderBy('portfolio_item.order')
             ->setMaxResults($count)
+            ->getQuery()
+            ->execute();
+    }
+
+    public function getItemsByCategory($category)
+    {
+        $qb = $this->getBySortableGroupsQueryBuilder(['category' => $category]);
+        return $qb->andWhere('n.visible = 1')
             ->getQuery()
             ->execute();
     }

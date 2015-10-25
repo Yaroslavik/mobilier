@@ -4,6 +4,7 @@ list.label_name: Имя
 list.label_info: Краткая информация
 list.label_order: Порядок
 list.label_visible: Видимый
+list.label__action: Действия
 filter.label_name: Имя
 filter.label_info: Краткая информация
 filter.label_content: Отзыв

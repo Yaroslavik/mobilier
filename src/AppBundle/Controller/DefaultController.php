@@ -68,6 +68,13 @@ class DefaultController extends Controller
     {
         // Categories
         $categories = $this->getDoctrine()->getRepository('AppBundle:PortfolioCategory')->getVisibleCategories();
+        $itemsRepository = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem');
+
+        $items = [];
+        foreach ($categories as $category) {
+            $items[$category->getId()]['category'] = $category;
+            $items[$category->getId()]['items'] = $itemsRepository->getItemsByCategory($category);
+        }
 
         // SEO
         $config = $this->get('app.configuration');
@@ -77,7 +84,7 @@ class DefaultController extends Controller
             ->addMeta('name', 'description', $config->get('META_DESCRIPTION_GALLERY'));
 
         return [
-            'categories' => $categories,
+            'items' => $items,
         ];
     }
 

@@ -11,6 +11,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="PortfolioCategoryRepository")
@@ -32,6 +33,7 @@ class PortfolioCategory
 
     /**
      * @ORM\Column(type="integer", name="`order`")
+     * @Gedmo\SortablePosition
      */
     protected $order = 0;
 

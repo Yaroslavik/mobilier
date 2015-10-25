@@ -10,6 +10,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Annotations\Annotation\IgnoreAnnotation;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="CommentRepository")
@@ -37,6 +38,7 @@ class Comment
 
     /**
      * @ORM\Column(type="integer", name="`order`")
+     * @Gedmo\SortablePosition
      */
     protected $order = 0;
 

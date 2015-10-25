@@ -2,24 +2,22 @@
 
 {% block content %}
     <section id="portfolio" class="portfolio padding-large text-center">
-        {% for category in categories %}
+        {% for item in items %}
             <div class="title">
-                <h2>{{ category.getTitle() }}</h2>
+                <h2>{{ item.category.title }}</h2>
             </div>
             <div class="portfolio-wrapper margin-bottom-medium">
-                {% for item in category.getItems() %}
-                    {% if item.getVisible() %}
-                        <div class="portfolio-item print">
-                            <div class="portfolio">
-                                <a href="{{ item.getWebPath() }}" data-lightbox-gallery="portfolio">
-                                    <img src="{{ item.getThumb('small') }}" alt="{{ item.getTitle() }}"/>
-                                    <div class="portfolio-overlay">
-                                        <div class="button">Увеличить</div>
-                                    </div>
-                                </a>
-                            </div>
+                {% for element in item.items %}
+                    <div class="portfolio-item print">
+                        <div class="portfolio">
+                            <a href="{{ element.getWebPath() }}" data-lightbox-gallery="portfolio">
+                                <img src="{{ element.getThumb('small') }}" alt="{{ element.getTitle() }}"/>
+                                <div class="portfolio-overlay">
+                                    <div class="button">Увеличить</div>
+                                </div>
+                            </a>
                         </div>
-                    {% endif %}
+                    </div>
                 {% endfor %}
             </div>
         {% endfor %}

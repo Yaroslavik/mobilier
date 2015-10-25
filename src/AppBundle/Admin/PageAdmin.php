@@ -39,7 +39,12 @@ class PageAdmin extends Admin
         $listMapper
             ->addIdentifier('title')
             ->add('slug')
-            ->add('visible');
+            ->add('visible', null, array('editable' => true))
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'edit' => array(),
+                )
+            ));
     }
 
     protected function configureRoutes(RouteCollection $collection)

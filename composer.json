@@ -25,7 +25,8 @@
         "sonata-project/datagrid-bundle": "dev-master",
         "sonata-project/core-bundle": "^2.3",
         "sonata-project/seo-bundle": "^2.0",
-        "gedmo/doctrine-extensions": "^2.4"
+        "gedmo/doctrine-extensions": "^2.4",
+        "pixassociates/sortable-behavior-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

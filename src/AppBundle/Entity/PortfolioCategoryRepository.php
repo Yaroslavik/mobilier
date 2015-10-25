@@ -15,9 +15,8 @@ class PortfolioCategoryRepository extends EntityRepository
     public function getVisibleCategories()
     {
         return $this->createQueryBuilder('portfolio_category')
-            ->leftJoin('portfolio_category.items', 'item', 'WITH', 'item.visible = 1')
             ->where('portfolio_category.visible = 1')
-            ->addOrderBy('item.order')
+            ->addOrderBy('portfolio_category.order')
             ->getQuery()
             ->execute();
     }

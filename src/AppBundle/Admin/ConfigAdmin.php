@@ -43,7 +43,12 @@ class ConfigAdmin extends Admin
         $listMapper
             ->addIdentifier('title')
             ->add('mask')
-            ->add('content');
+            ->add('content')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'edit' => array(),
+                )
+            ));
     }
 
     protected function configureRoutes(RouteCollection $collection)

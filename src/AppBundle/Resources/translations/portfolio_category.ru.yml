@@ -3,6 +3,7 @@ breadcrumb.link_portfolio_category_list: Список категорий
 list.label_title: Название
 list.label_order: Порядок
 list.label_visible: Видимый
+list.label__action: Действия
 filter.label_title: Название
 filter.label_visible: Видимый
 form.label_title: Название

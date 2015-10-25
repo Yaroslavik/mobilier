@@ -5,6 +5,7 @@ filter.label_mask: Служебное имя
 list.label_title: Название параметра
 list.label_mask: Служебное имя
 list.label_content: Значение параметра
+list.label__action: Действия
 form.label_title: Название параметра
 form.label_mask: Служебное имя
 form.label_content: Значение параметра

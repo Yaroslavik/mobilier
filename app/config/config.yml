@@ -153,6 +153,8 @@ sonata_admin:
     templates:
         layout:     'AppBundle:Admin:standard_layout.html.twig'
 
+    persist_filters: true
+
 sonata_user:
     #security_acl: true # Uncomment for ACL support
     manager_type: orm # can be orm or mongodb
@@ -204,3 +206,9 @@ sonata_seo:
             #'xmlns:og':           http://opengraphprotocol.org/schema/
             #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
 
+pix_sortable_behavior:
+    db_driver: orm # default value : orm
+    position_field:
+        default: order #default value : position
+#        entities:
+#            AppBundle/Entity/PortfolioCategory: order

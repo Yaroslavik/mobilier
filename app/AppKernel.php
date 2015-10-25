@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
+            new Pix\SortableBehaviorBundle\PixSortableBehaviorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
