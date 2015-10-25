@@ -12,7 +12,10 @@
                     <div class="phone-icon right">
                         <a class="phone-icon poplight" rel="popup_contact" href="#?w=600">
                             <i class="fa fa-phone-square fa-3x"></i></a>
-                        <p>{{ configuration.get('PHONE_3')|raw }}</p>
+
+                        <div class="codes"><b>{{ configuration.get('PHONE_1')|raw }}</b><br/>
+                            <b>{{ configuration.get('PHONE_2')|raw }}</b></div>
+                        <div class="big-phone"> <span>{{ configuration.get('PHONE_3')|raw }}</span><br/></div>
                     </div>
                 </ul>
             </div>

@@ -44,29 +44,45 @@ ol {
 
 .logo {
     margin-top: 10px;
+    float: left;
 }
 
 .contacts {
-    margin-top: -90px;
+ float: right;
+margin-top: 20px;
+
     font-size: 19px;
     text-align: center;
     font-weight: 500;
-}
 
-.contacts a {
-    color: #ff8000;
-    text-shadow: 1px 1px 3px #ffd68a;
 }
+.contacts .icons {display: inline-block; float: left; margin-right: 10px; margin-top: 20px;}
+.contacts .codes {display: inline-block; float: left; margin-right: 10px;margin-top:10px; }
+.contacts .big-phone {display: inline-block; float: left;}
+.contacts .big-phone span { font-size: 50px;}
+
+.contacts2 .icons {display: inline-block; float: left; margin-right: 10px; margin-top: 20px;}
+.contacts2 .codes {display: inline-block; float: left; margin-right: 10px;margin-top:10px; }
+.contacts2 .big-phone {display: inline-block; float: left;}
+.contacts2 .big-phone span { font-size: 50px;}
+
+.phone-icon .icons {display: inline-block; float: left; margin-right: 10px; margin-top: 20px;}
+.phone-icon .codes {display: inline-block; float: left; margin-right: 10px;margin-top:10px; }
+.phone-icon .big-phone {display: inline-block; float: left; margin-top: 8px; }
+.phone-icon .big-phone span { font-size: 30px;}
+
 
 .contacts span {
     font-size: 17px;
 }
 
 .worktime {
-    margin-right: 100px;
-    margin-top: -70px;
+    float: right;
+margin-right: 400px;
+margin-top:-60px;
     text-align: center;
 }
+
 
 ul.navg li p {
     font-size: 17px;
@@ -84,12 +100,16 @@ ul.navg li a {
 }
 
 .phone-icon {
-    margin-top: -8px;
+float: right;
+    margin-top: -43px;
     margin-right: 10px;
 }
 
 .phone-icon a {
     color: coral;
+    float:left;
+    margin-top: 8px;
+
 }
 
 .phone-icon p {
@@ -398,7 +418,7 @@ ul.navg li {
 }
 
 .worktime2 {
-    margin-right: 250px;
+    margin-right: 350px;
     margin-top: -100px;
 }
 
@@ -746,7 +766,7 @@ ul.navg li {
     font-size: 20px;
     border-radius: 5px;
     background-color: #f7612a;
-    background-image: -moz-linear-gradient(center top, #5BC0DE, #2F96B4);
+ background-image: -moz-linear-gradient(center top, #5BC0DE, #2F96B4);
     background-image: -webkit-linear-gradient(center top, #5bc0de, #2f96b4);
     background-image: -ms-linear-gradient(#5bc0de, #2f96b4);
     background-image: -o-linear-gradient(center top, #5BC0DE, #2F96B4);
@@ -1310,4 +1330,8 @@ hr {
 
 .modal-content {
     padding-top: 10px;
+}
+.logo p {
+    font-size: 16px;font-weight: 500;
+    text-align: center;
 }
