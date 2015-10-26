@@ -12,7 +12,7 @@
             <ul>
                 <li><a class="btn btn-danger poplight" rel="popup_contact" href="#?w=600">Заказать бесплатный замер</a>
                 </li>
-                <li><a href="#portfolio" class="btn btn-default">Посмотреть наши работы</a></li>
+                <li><a href="#portfolio" id="scroll-to-portfolio" class="btn btn-default">Посмотреть наши работы</a></li>
             </ul>
         </div>
     </div>
@@ -51,8 +51,9 @@
                         <h3>Cобственный салон</h3>
                         <p>
                             Вы можете приехать к нам и ознакомиться
-                            с образцами на месте. В салоне представлена
-                            экспозиция кухонной мебели, которую Вы можете
+                            с образцами на месте. В салоне по адресу
+                            <em><a href="#map" id="scroll-to-map">{{ configuration.get('ADDRESS')|raw }}</a></em>
+                            представлена экспозиция кухонной мебели, которую Вы можете
                             посмотреть и потрогать.
                         </p>
                     </div>

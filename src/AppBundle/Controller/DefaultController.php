@@ -49,7 +49,9 @@ class DefaultController extends Controller
         $this->get('sonata.seo.page')
             ->setTitle($config->get('META_TITLE_HOMEPAGE'))
             ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_HOMEPAGE'))
-            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_HOMEPAGE'));
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_HOMEPAGE'))
+            ->addMeta('property', 'og:title', $config->get('META_TITLE_HOMEPAGE'))
+            ->addMeta('property', 'og:description', $config->get('META_DESCRIPTION_HOMEPAGE'));
 
         return [
             'portfolioItems' => $portfolioItems,
@@ -81,7 +83,9 @@ class DefaultController extends Controller
         $this->get('sonata.seo.page')
             ->setTitle($config->get('META_TITLE_GALLERY'))
             ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_GALLERY'))
-            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_GALLERY'));
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_GALLERY'))
+            ->addMeta('property', 'og:title', $config->get('META_TITLE_GALLERY'))
+            ->addMeta('property', 'og:description', $config->get('META_DESCRIPTION_GALLERY'));
 
         return [
             'items' => $items,
@@ -101,7 +105,9 @@ class DefaultController extends Controller
         $this->get('sonata.seo.page')
             ->setTitle($config->get('META_TITLE_SERVICES'))
             ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_SERVICES'))
-            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_SERVICES'));
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_SERVICES'))
+            ->addMeta('property', 'og:title', $config->get('META_TITLE_SERVICES'))
+            ->addMeta('property', 'og:description', $config->get('META_DESCRIPTION_SERVICES'));
 
         return [];
     }
@@ -119,7 +125,9 @@ class DefaultController extends Controller
         $this->get('sonata.seo.page')
             ->setTitle($config->get('META_TITLE_INFO'))
             ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_INFO'))
-            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_INFO'));
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_INFO'))
+            ->addMeta('property', 'og:title', $config->get('META_TITLE_INFO'))
+            ->addMeta('property', 'og:description', $config->get('META_DESCRIPTION_INFO'));
 
         return [];
     }
@@ -137,7 +145,9 @@ class DefaultController extends Controller
         $this->get('sonata.seo.page')
             ->setTitle($config->get('META_TITLE_CALC'))
             ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_CALC'))
-            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_CALC'));
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_CALC'))
+            ->addMeta('property', 'og:title', $config->get('META_TITLE_CALC'))
+            ->addMeta('property', 'og:description', $config->get('META_DESCRIPTION_CALC'));
 
         return [];
     }
@@ -161,7 +171,9 @@ class DefaultController extends Controller
         $this->container->get('sonata.seo.page')
             ->setTitle($page->getTitle())
             ->addMeta('name', 'keywords', $page->getMetaKeywords())
-            ->addMeta('name', 'description', $page->getMetaDescription());
+            ->addMeta('name', 'description', $page->getMetaDescription())
+            ->addMeta('property', 'og:title', $page->getTitle())
+            ->addMeta('property', 'og:description', $page->getMetaDescription());
 
         return [
             'page' => $page,

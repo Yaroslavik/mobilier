@@ -1,4 +1,4 @@
-<div id="map">
+<div id="map" class="clearfix">
     {% if mapWithTitle is defined and mapWithTitle %}
         <div class="title">
             <h2>Как проехать</h2>
@@ -6,29 +6,26 @@
             <p>К нам удобно добираться</p>
         </div>
     {% endif %}
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4703.424320774266!2d27.448113!3d53.883545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdaea361ba8fb%3A0xc352956304b13802!2z0YPQuy4g0KjQsNGA0LDQvdCz0L7QstC40YfQsCAyNSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sby!4v1444646578775" width="50%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-<div class="pavil">
-
-</div>
+    <div class="left">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4703.424320774266!2d27.448113!3d53.883545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbdaea361ba8fb%3A0xc352956304b13802!2z0YPQuy4g0KjQsNGA0LDQvdCz0L7QstC40YfQsCAyNSwg0JzQuNC90YHQuiwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sby!4v1444646578775" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="right">
+    </div>
 </div>
 <div id="footer">
     <div class="container clearfix">
         <div class="logo2">
             <a href="{{ path('homepage') }}"><img src="{{ asset('bundles/app/img/logo.png.png') }}" alt="logo"></a>
         </div>
-        <div class="adress"><p>г. Минск, ул. Шаранговича д. 25 павильон 215</p></div>
-
+        <div class="adress"><p>{{ configuration.get('ADDRESS')|raw }}</p></div>
             <div class="contacts2 right">
-
                 <div class="icons"><img src="{{ asset('bundles/app/img/vel.jpg') }}" alt="vel">
                     <img src="{{ asset('bundles/app/img/mts.jpg') }}" alt="vel"></div>
                 <div class="codes"><b>{{ configuration.get('PHONE_1')|raw }}</b><br/>
                     <b>{{ configuration.get('PHONE_2')|raw }}</b></div>
                 <div class="big-phone"> <span>{{ configuration.get('PHONE_3')|raw }}</span><br/></div>
-                <div class="link">   <a class="poplight" rel="popup_contact" href="#?w=600">Заказать звонок</a></div>
-
+                <div class="link"><a class="poplight" rel="popup_contact" href="#?w=600">Заказать звонок</a></div>
             </div>
-
         <div class="worktime2 right">
             <ul>
                 <li><b>{{ configuration.get('WORK_TIME') }}</b></li>
@@ -45,6 +42,19 @@
                 <li><a href="{{ path('page', {'url': 'faq'}) }}">Вопрос-ответ</a></li>
                 <li><a href="{{ path('calc') }}">Расчет кухни</a></li>
             </ul>
+        </div>
+        <div class="social">
+            <script type="text/javascript">(function() {
+                if (window.pluso)if (typeof window.pluso.start == "function") return;
+                if (window.ifpluso==undefined) { window.ifpluso = 1;
+                    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                    s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                    s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                    var h=d[g]('body')[0];
+                    h.appendChild(s);
+                }})();
+            </script>
+            <div class="pluso" data-background="transparent" data-options="big,square,line,horizontal,nocounter,theme=04" data-services="odnoklassniki,twitter,facebook,vkontakte,google"></div>
         </div>
     </div>
 </div>

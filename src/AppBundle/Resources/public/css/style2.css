@@ -7,6 +7,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
     background: #fff;
     width: 100%;
+    min-width: 960px;
 }
 
 .left {
@@ -48,29 +49,88 @@ ol {
 }
 
 .contacts {
- float: right;
-margin-top: 20px;
+    float: right;
+    margin-top: 20px;
 
     font-size: 19px;
     text-align: center;
     font-weight: 500;
 
 }
-.contacts .icons {display: inline-block; float: left; margin-right: 10px; margin-top: 20px;}
-.contacts .codes {display: inline-block; float: left; margin-right: 10px;margin-top:10px; }
-.contacts .big-phone {display: inline-block; float: left;}
-.contacts .big-phone span { font-size: 50px;}
 
-.contacts2 .icons {display: inline-block; float: left; margin-right: 10px; margin-top: 20px;}
-.contacts2 .codes {display: inline-block; float: left; margin-right: 10px;margin-top:10px; }
-.contacts2 .big-phone {display: inline-block; float: left;}
-.contacts2 .big-phone span { font-size: 50px;}
+.contacts .icons {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 20px;
+}
 
-.phone-icon .icons {display: inline-block; float: left; margin-right: 10px; margin-top: 20px;}
-.phone-icon .codes {display: inline-block; float: left; margin-right: 10px;margin-top:10px; }
-.phone-icon .big-phone {display: inline-block; float: left; margin-top: 8px; }
-.phone-icon .big-phone span { font-size: 30px;}
+.contacts .codes {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
 
+.contacts .big-phone {
+    display: inline-block;
+    float: left;
+}
+
+.contacts .big-phone span {
+    font-size: 50px;
+}
+
+.contacts a.poplight {
+    color: #FF8000;
+}
+
+.contacts2 .icons {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.contacts2 .codes {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.contacts2 .big-phone {
+    display: inline-block;
+    float: left;
+}
+
+.contacts2 .big-phone span {
+    font-size: 50px;
+}
+
+.phone-icon .icons {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.phone-icon .codes {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.phone-icon .big-phone {
+    display: inline-block;
+    float: left;
+    margin-top: 8px;
+}
+
+.phone-icon .big-phone span {
+    font-size: 30px;
+}
 
 .contacts span {
     font-size: 17px;
@@ -78,11 +138,10 @@ margin-top: 20px;
 
 .worktime {
     float: right;
-margin-right: 400px;
-margin-top:-60px;
+    margin-right: 400px;
+    margin-top: -60px;
     text-align: center;
 }
-
 
 ul.navg li p {
     font-size: 17px;
@@ -100,14 +159,18 @@ ul.navg li a {
 }
 
 .phone-icon {
-float: right;
-    margin-top: -43px;
+    float: right;
+    margin-top: -15px;
     margin-right: 10px;
+}
+
+div.phone-icon.right {
+    margin-right: 4px;
 }
 
 .phone-icon a {
     color: coral;
-    float:left;
+    float: left;
     margin-top: 8px;
 
 }
@@ -766,7 +829,7 @@ ul.navg li {
     font-size: 20px;
     border-radius: 5px;
     background-color: #f7612a;
- background-image: -moz-linear-gradient(center top, #5BC0DE, #2F96B4);
+    background-image: -moz-linear-gradient(center top, #5BC0DE, #2F96B4);
     background-image: -webkit-linear-gradient(center top, #5bc0de, #2f96b4);
     background-image: -ms-linear-gradient(#5bc0de, #2f96b4);
     background-image: -o-linear-gradient(center top, #5BC0DE, #2F96B4);
@@ -1331,7 +1394,61 @@ hr {
 .modal-content {
     padding-top: 10px;
 }
+
 .logo p {
-    font-size: 16px;font-weight: 500;
+    font-size: 16px;
+    font-weight: 500;
     text-align: center;
+    width: 188px;
+}
+
+#footer .adress {
+    margin-left: 13px;
+}
+
+#footer .adress p {
+    width: 155px;
+    text-align: center;
+}
+
+#map .left, #map .right {
+    width: 50%;
+    height: 450px;
+    float: left;
+}
+
+#map .right {
+    background-size: contain;
+    background-image: url("../img/pav.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#map .right img {
+    display: block;
+    display: none;
+    width: 90%;
+    margin: 95px auto 0;
+}
+
+@media all and (max-width: 1200px) {
+    #map .left,
+    #map .right {
+        float: none;
+        width: 100%;
+    }
+}
+
+#footer .container {
+    position: relative;
+}
+
+#footer .social {
+    position: absolute;
+    right: 33px;
+    bottom: 3px;
+}
+
+.adv-box a {
+    color: #FF8000;
 }

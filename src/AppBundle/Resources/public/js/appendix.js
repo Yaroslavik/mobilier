@@ -3,6 +3,10 @@
  */
 
 $(function () {
+    // Плавная прокрутка к работам
+    $('#scroll-to-portfolio').smoothScroll({speed: 600});
+    $('#scroll-to-map').smoothScroll({speed: 1000});
+
     // Заявка на звонок
     function sendApplication(action, name, phone, callback) {
         // Проверка
