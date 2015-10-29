@@ -1,5 +1,6 @@
 Comment: Отзыв
 breadcrumb.link_comment_list: Список отзывов
+breadcrumb.link_comment_delete: Подтверждение удаления
 list.label_name: Имя
 list.label_info: Краткая информация
 list.label_order: Порядок

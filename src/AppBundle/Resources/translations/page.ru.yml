@@ -1,5 +1,6 @@
 Page: Страница
 breadcrumb.link_page_list: Страницы
+breadcrumb.link_page_delete: Подтверждение удаления
 list.label_title: Название
 list.label_visible: Видимый
 list.label_slug: Адрес

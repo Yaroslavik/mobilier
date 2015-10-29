@@ -1,5 +1,6 @@
 Application Status: Статус заявки
 breadcrumb.link_application_status_list: Статусы заявок
+breadcrumb.link_application_status_delete: Подтверждение удаления
 list.label_title: Статус
 filter.label_title: Статус
 form.label_title: Статус

@@ -1,5 +1,6 @@
 Application: Заявка
 breadcrumb.link_application_list: Список заявок
+breadcrumb.link_portfolio_item_delete: Подтверждение удаления
 list.label_created_at: Дата создания
 list.label_name: Имя
 list.label_phone: Телефон
