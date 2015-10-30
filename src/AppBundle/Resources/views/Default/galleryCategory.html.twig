@@ -1,0 +1,24 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block content %}
+    <section id="portfolio" class="portfolio padding-large text-center">
+        <div class="title">
+            <h2 class="lft">{{ category.title }}</h2>
+        </div>
+        <div class="portfolio-wrapper margin-bottom-medium">
+            {% for element in items %}
+                <div class="portfolio-item print">
+                    <div class="portfolio">
+                        <a href="{{ element.getWebPath() }}" data-lightbox-gallery="portfolio">
+
+                            <img src="{{ element.getThumb('small') }}" alt="{{ element.getTitle() }}"/>
+                            <div class="portfolio-overlay">
+                                <div class="button">'Увеличить'</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

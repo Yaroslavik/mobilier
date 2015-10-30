@@ -23,10 +23,11 @@ class PortfolioItemRepository extends SortableRepository
             ->execute();
     }
 
-    public function getItemsByCategory($category)
+    public function getItemsByCategory($category, $limit = null)
     {
         $qb = $this->getBySortableGroupsQueryBuilder(['category' => $category]);
         return $qb->andWhere('n.visible = 1')
+            ->setMaxResults($limit)
             ->getQuery()
             ->execute();
     }

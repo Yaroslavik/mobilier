@@ -4,17 +4,23 @@
     <section id="portfolio" class="portfolio padding-large text-center">
         {% for item in items %}
             <div class="title">
-                <h2>{{ item.category.title }}</h2>
+                <h2 class="lft">{{ item.category.title }}</h2>
             </div>
             <div class="portfolio-wrapper margin-bottom-medium">
-                {% for element in item.items %}
-                    <div class="portfolio-item print">
+                {% set count = item.items|length %}
+                {% for element in item.items|slice(0, 4) %}
+                    {% set moreItems = (loop.index == 4 and count > 4) %}
+                    <div class="portfolio-item print{{ moreItems ? ' more' : '' }}">
                         <div class="portfolio">
-                            <a href="{{ element.getWebPath() }}" data-lightbox-gallery="portfolio">
+                            <a href="{{ moreItems ? path('gallery_category', {'id': item.category.id }) : element.getWebPath() }}"
+                               {{ not moreItems ? 'data-lightbox-gallery="portfolio"' : ''}}>
                                 <img src="{{ element.getThumb('small') }}" alt="{{ element.getTitle() }}"/>
                                 <div class="portfolio-overlay">
-                                    <div class="button">Увеличить</div>
+                                    <div class="button">{{ moreItems ? 'Ещё' : 'Увеличить' }}</div>
                                 </div>
+                                {% if moreItems %}
+                                    <a class="hidden" href="{{ element.getWebPath() }}" data-lightbox-gallery="portfolio"></a>
+                                {% endif %}
                             </a>
                         </div>
                     </div>

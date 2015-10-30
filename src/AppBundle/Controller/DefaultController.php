@@ -75,7 +75,7 @@ class DefaultController extends Controller
         $items = [];
         foreach ($categories as $category) {
             $items[$category->getId()]['category'] = $category;
-            $items[$category->getId()]['items'] = $itemsRepository->getItemsByCategory($category);
+            $items[$category->getId()]['items'] = $itemsRepository->getItemsByCategory($category, 5);
         }
 
         // SEO
@@ -88,6 +88,40 @@ class DefaultController extends Controller
             ->addMeta('property', 'og:description', $config->get('META_DESCRIPTION_GALLERY'));
 
         return [
+            'items' => $items,
+        ];
+    }
+
+    /**
+     * Список работ по категории
+     *
+     * @param $id - id категории
+     * @return array
+     *
+     * @Route("/gallery/{id}", requirements={"id": "\d+"}, name="gallery_category")
+     * @Template()
+     */
+    public function galleryCategoryAction($id)
+    {
+        $category = $this->getDoctrine()->getRepository('AppBundle:PortfolioCategory')->findOneBy(['id' => $id, 'visible' => 1]);
+
+        if (!$category) {
+            throw new NotFoundHttpException("Страница не найдена.");
+        }
+
+        $items = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getItemsByCategory($category);
+
+        // SEO
+        $config = $this->get('app.configuration');
+        $this->get('sonata.seo.page')
+            ->setTitle($config->get('META_TITLE_GALLERY'))
+            ->addMeta('name', 'keywords', $config->get('META_KEYWORDS_GALLERY'))
+            ->addMeta('name', 'description', $config->get('META_DESCRIPTION_GALLERY'))
+            ->addMeta('property', 'og:title', $config->get('META_TITLE_GALLERY'))
+            ->addMeta('property', 'og:description', $config->get('META_DESCRIPTION_GALLERY'));
+
+        return [
+            'category' => $category,
             'items' => $items,
         ];
     }

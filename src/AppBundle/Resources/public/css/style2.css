@@ -460,6 +460,10 @@ ul.navg li {
     color: white;
 }
 
+#autor a {
+    color: #ff8000;
+}
+
 .logo2 {
     margin-top: 50px;
 }
@@ -562,6 +566,19 @@ ul.navg li {
 
 .portfolio .portfolio-item a:hover > img {
     transform: scale(1.2);
+}
+
+.portfolio .portfolio-item.more .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-wrapper .portfolio-item.more .button::after {
+    height: 260%;
+    opacity: 1;
+}
+
+.portfolio-wrapper .portfolio-item.more .button {
+    color: #E74C3C;
 }
 
 .portfolio > .button {
@@ -671,8 +688,15 @@ ul.navg li {
     margin: 0 auto;
 }
 
+#portfolio .title h2.lft {
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 .portfolio-wrapper {
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .popup_block {
