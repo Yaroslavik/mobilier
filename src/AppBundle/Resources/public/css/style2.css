@@ -28,6 +28,10 @@ ol {
     padding: 0;
 }
 
+a {
+    outline: none !important;
+}
+
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -450,9 +454,6 @@ ul.navg li {
     background: #ff8000;
 }
 
-#footer {
-}
-
 #autor {
     background: #333;
     text-align: center;
@@ -552,7 +553,7 @@ ul.navg li {
     z-index: 4;
     opacity: 0;
     transition: all 0.3s ease-in-out;
-    padding: 125px 20px;
+    padding: 0;
 }
 
 .portfolio .portfolio-item a img {
@@ -626,19 +627,24 @@ ul.navg li {
 }
 
 .portfolio-wrapper .button {
-    padding: 20px 60px;
-    display: inline-block;
+    padding: 20px 0 0;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
     outline: none;
-    position: relative;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
     border: 3px solid #fff;
     color: #fff;
     overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 60px;
+    margin: -30px 0 0 -100px;
+    display: block;
 }
 
 .portfolio-wrapper .button:after {
