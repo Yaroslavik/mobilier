@@ -9,11 +9,16 @@
             {% for element in items %}
                 <div class="portfolio-item print">
                     <div class="portfolio">
-                        <a href="{{ element.getWebPath() }}" data-lightbox-gallery="portfolio">
-
-                            <img src="{{ element.getThumb('small') }}" alt="{{ element.getTitle() }}"/>
+                        <a href="{{ element.getWebPath() }}" data-lightbox-gallery="portfolio"
+                           title="{{ element.getTitle() }}">
+                            <div class="preview-img">
+                                <img src="{{ element.getThumb('small') }}" />
+                                <div class="preview-title">
+                                    <span>{{ element.getTitle() }}</span>
+                                </div>
+                            </div>
                             <div class="portfolio-overlay">
-                                <div class="button">'Увеличить'</div>
+                                <div class="button">Увеличить</div>
                             </div>
                         </a>
                     </div>

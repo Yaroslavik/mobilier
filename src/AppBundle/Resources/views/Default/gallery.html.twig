@@ -13,13 +13,19 @@
                     <div class="portfolio-item print{{ moreItems ? ' more' : '' }}">
                         <div class="portfolio">
                             <a href="{{ moreItems ? path('gallery_category', {'id': item.category.id }) : element.getWebPath() }}"
-                               {{ not moreItems ? 'data-lightbox-gallery="portfolio"' : ''}}>
-                                <img src="{{ element.getThumb('small') }}" alt="{{ element.getTitle() }}"/>
+                               {{ not moreItems ? 'data-lightbox-gallery="portfolio"' : ''}} title="{{ element.getTitle() }}">
+                                <div class="preview-img">
+                                    <img src="{{ element.getThumb('small') }}" />
+                                    <div class="preview-title">
+                                        <span>{{ element.getTitle() }}</span>
+                                    </div>
+                                </div>
                                 <div class="portfolio-overlay">
                                     <div class="button">{{ moreItems ? 'Ещё' : 'Увеличить' }}</div>
                                 </div>
                                 {% if moreItems %}
-                                    <a class="hidden" href="{{ element.getWebPath() }}" data-lightbox-gallery="portfolio"></a>
+                                    <a class="hidden" href="{{ element.getWebPath() }}" data-lightbox-gallery="portfolio"
+                                       title="{{ element.getTitle() }}"></a>
                                 {% endif %}
                             </a>
                         </div>

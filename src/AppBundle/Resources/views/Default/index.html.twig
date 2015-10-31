@@ -26,8 +26,14 @@
             {% for item in portfolioItems %}
                 <div class="portfolio-item print">
                     <div class="portfolio">
-                        <a href="{{ item.getWebPath() }}" data-lightbox-gallery="portfolio">
-                            <img src="{{ item.getThumb('small') }}" alt="{{ item.getTitle() }}"/>
+                        <a href="{{ item.getWebPath() }}" data-lightbox-gallery="portfolio"
+                           title="{{ item.getTitle() }}">
+                            <div class="preview-img">
+                                <img src="{{ item.getThumb('small') }}" />
+                                <div class="preview-title">
+                                    <span>{{ item.getTitle() }}</span>
+                                </div>
+                            </div>
                             <div class="portfolio-overlay">
                                 <div class="button">Увеличить</div>
                             </div>

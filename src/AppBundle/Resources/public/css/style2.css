@@ -28,6 +28,10 @@ ol {
     padding: 0;
 }
 
+a {
+    outline: none !important;
+}
+
 .clearfix:before,
 .clearfix:after {
     content: " ";
@@ -450,9 +454,6 @@ ul.navg li {
     background: #ff8000;
 }
 
-#footer {
-}
-
 #autor {
     background: #333;
     text-align: center;
@@ -552,20 +553,46 @@ ul.navg li {
     z-index: 4;
     opacity: 0;
     transition: all 0.3s ease-in-out;
-    padding: 125px 20px;
+    padding: 0;
 }
 
 .portfolio .portfolio-item a img {
     width: 100%;
-    transition: all 1.2s linear;
 }
 
 .portfolio .portfolio-item a:hover > .portfolio-overlay {
     opacity: 1;
 }
 
-.portfolio .portfolio-item a:hover > img {
+.portfolio .portfolio-item .preview-img {
+    transition: all 1.2s linear;
+    position: relative;
+}
+
+.portfolio .portfolio-item a:hover > .preview-img {
     transform: scale(1.2);
+}
+
+.portfolio .portfolio-item .preview-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 12px 30px;
+    font: bold 14px/18px "Roboto Condensed", sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.portfolio .portfolio-item .preview-title span {
+    transition: all 1.2s linear;
+    display: inline-block;
+}
+
+.portfolio .portfolio-item a:hover .preview-title span {
+    transform: scale(0.85);
 }
 
 .portfolio .portfolio-item.more .portfolio-overlay {
@@ -626,19 +653,24 @@ ul.navg li {
 }
 
 .portfolio-wrapper .button {
-    padding: 20px 60px;
-    display: inline-block;
+    padding: 20px 0 0;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
     outline: none;
-    position: relative;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
     border: 3px solid #fff;
     color: #fff;
     overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 60px;
+    margin: -30px 0 0 -100px;
+    display: block;
 }
 
 .portfolio-wrapper .button:after {
