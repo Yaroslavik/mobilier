@@ -23,11 +23,13 @@
             <p>Только настоящие фотографии выполненных работ</p>
         </div>
         <div class="portfolio-wrapper margin-bottom-medium">
-            {% for item in portfolioItems %}
-                <div class="portfolio-item print">
+            {% set count = portfolioItems|length %}
+            {% for item in portfolioItems|slice(0, 12) %}
+                {% set moreItems = (loop.index == 12 and count > 12) %}
+                <div class="portfolio-item print{{ moreItems ? ' more' : '' }}">
                     <div class="portfolio">
-                        <a href="{{ item.getWebPath() }}" data-lightbox-gallery="portfolio"
-                           title="{{ item.getTitle() }}">
+                        <a href="{{ moreItems ? path('gallery_category', {'id': item.category.id }) : item.getWebPath() }}"
+                           {{ not moreItems ? 'data-lightbox-gallery="portfolio"' : ''}} title="{{ item.getTitle() }}">
                             <div class="preview-img">
                                 <img src="{{ item.getThumb('small') }}" />
                                 <div class="preview-title">
@@ -35,8 +37,12 @@
                                 </div>
                             </div>
                             <div class="portfolio-overlay">
-                                <div class="button">Увеличить</div>
+                                <div class="button">{{ moreItems ? 'Ещё' : 'Увеличить' }}</div>
                             </div>
+                            {% if moreItems %}
+                                <a class="hidden" href="{{ item.getWebPath() }}" data-lightbox-gallery="portfolio"
+                                   title="{{ item.getTitle() }}"></a>
+                            {% endif %}
                         </a>
                     </div>
                 </div>

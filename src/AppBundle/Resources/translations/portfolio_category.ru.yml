@@ -4,9 +4,11 @@ breadcrumb.link_portfolio_category_delete: Подтверждение удале
 list.label_title: Название
 list.label_order: Порядок
 list.label_visible: Видимый
+list.label_on_homepage: На главной
 list.label__action: Действия
 filter.label_title: Название
 filter.label_visible: Видимый
 form.label_title: Название
 form.label_order: Порядок
 form.label_visible: Видимый
+form.label_on_homepage: На главной

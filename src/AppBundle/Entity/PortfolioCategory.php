@@ -43,6 +43,11 @@ class PortfolioCategory
     protected $visible = true;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $onHomepage = false;
+
+    /**
      * @ORM\OneToMany(targetEntity="PortfolioItem", mappedBy="category")
      */
     protected $items;
@@ -171,5 +176,29 @@ class PortfolioCategory
     public function getVisible()
     {
         return $this->visible;
+    }
+
+    /**
+     * Set onHomepage
+     *
+     * @param boolean $onHomepage
+     *
+     * @return PortfolioCategory
+     */
+    public function setOnHomepage($onHomepage)
+    {
+        $this->onHomepage = $onHomepage;
+
+        return $this;
+    }
+
+    /**
+     * Get onHomepage
+     *
+     * @return boolean
+     */
+    public function getOnHomepage()
+    {
+        return $this->onHomepage;
     }
 }

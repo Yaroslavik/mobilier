@@ -28,7 +28,12 @@ class DefaultController extends Controller
     public function indexAction()
     {
         // Images
-        $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getHomepageItems();
+        $category = $this->getDoctrine()->getRepository('AppBundle:PortfolioCategory')->findOneBy(['onHomepage' => 1]);
+        $portfolioItems = [];
+
+        if ($category) {
+            $portfolioItems = $this->getDoctrine()->getRepository('AppBundle:PortfolioItem')->getItemsByCategory($category, 13);
+        }
 
         // Comments
         $comments = $this->getDoctrine()->getRepository('AppBundle:Comment')->getActualComments();

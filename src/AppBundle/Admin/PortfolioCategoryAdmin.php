@@ -35,7 +35,8 @@ class PortfolioCategoryAdmin extends Admin
     {
         $formMapper
             ->add('title')
-            ->add('visible', null, ['required' => false]);
+            ->add('visible', null, ['required' => false])
+            ->add('onHomepage', null, ['required' => false]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
@@ -53,6 +54,7 @@ class PortfolioCategoryAdmin extends Admin
             ->addIdentifier('title')
             ->add('visible', null, array('editable' => true))
             ->add('order')
+            ->add('onHomepage', null, array('editable' => true))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'edit' => array(),
